@@ -1,0 +1,72 @@
+body {
+    background-color: rgb(219, 220, 221);
+    margin: 0;
+    font-size:0;
+}
+
+.header-menu {
+    background-color: white;
+    height: 70px;
+}
+
+.body-text {
+    display: flex;
+    background-color: tomato;
+    height: 500px;
+}
+
+.main {
+    background-color: rgb(146, 130, 238);
+    display: inline-block;
+    margin: 0;
+    width: 70%;
+    font-size: 10pt;
+    text-align: justify;
+}
+
+.left-side {
+    background-color: violet;
+    /* display: inline-block; */
+    font-size: 10pt;
+    width: 15%;
+    margin: 0;
+    height: 100%;
+}
+
+.right-side {
+    background-color: yellow;
+    /* display: inline-block; */
+    font-size: 10pt;
+    width: 15%;
+    height: 100%;
+    margin: 0;
+
+}
+
+.menu {
+    margin-top: 0px;
+    margin-left: 220px;
+    padding-left: 0;
+    padding: 0;
+    position: relative;
+    top: 20px;
+
+}
+
+.menu-button {
+    background: linear-gradient(to top, gray, white);
+    height: 50px;
+    border-top: 0;
+    border-left: 1px solid rgb(134, 255, 255);
+    border-right: 1px solid rgb(134, 255, 255);
+    border-bottom: 1px solid  rgb(134, 255, 255);
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.banner {
+    margin: 0 auto;
+    display: block;
+    margin-top: 5px;
+}
+
