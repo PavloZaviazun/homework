@@ -1,0 +1,42 @@
+* {
+    margin: 0px;
+}
+
+.main {
+    background-color: black;
+}
+
+.first {
+    background-color: #ff7f26;
+    height: 145px;
+}
+
+.second {
+    height: 500px;
+    display: flex;
+}
+
+.second-1 {
+    background-color: #ed1b24;
+    height: 500px;
+    width: 23%;
+}
+
+.second-2 {
+    background-color: #23b14d;
+    height: 500px;
+    width: 27%;
+}
+
+.second-3 {
+    background-color: #00a3e8;
+    height: 500px;
+    width: 30%;
+}
+
+.second-4 {
+    background-color: black;
+    height: 500px;
+    width: 20%;
+}
+
