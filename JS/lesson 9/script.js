@@ -162,8 +162,8 @@ wakeUp( 8, (error, wakeUp) => {
 });*/
 
 /*wakeUp(8)
-    .then(valueResolveWashUp => {
-        console.log("First checkpoint day: " + valueResolveWashUp);
+    .then(valueResolveWakeUp => {
+        console.log("First checkpoint day: " + valueResolveWakeUp);
         return washUp(true, true);
     })
     .then(valueResolveWashUp => {
