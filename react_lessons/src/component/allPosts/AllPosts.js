@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import Post from "../post/Post";
 import "./AllPosts.css"
+import {PostService} from "../../services/PostService";
 
 
 class AllPosts extends Component {
+
+    postService = new PostService();
 
     state = ({posts: [], chosenOne: null})
 
@@ -26,11 +29,7 @@ class AllPosts extends Component {
     }
 
     componentDidMount() {
-        fetch("https://jsonplaceholder.typicode.com/posts")
-            .then(postsFromAPI => postsFromAPI.json())
-            .then(postsFromAPI => {
-                return this.setState({posts: postsFromAPI})
-            })
+        this.postService.getAllPosts().then(value => this.setState({posts: value}));
     }
 
     chooseOne = (id) => {
