@@ -1,5 +1,10 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
 .titleClass {
-    margin-left: 5px;
+    margin-left: 8px;
+    padding-top: 5px;
 }
 
 .bodyClass {
@@ -9,3 +14,5 @@
 .buttonClass {
     margin: 5px 5px;
 }
+
+

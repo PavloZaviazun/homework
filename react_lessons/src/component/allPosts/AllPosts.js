@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Post from "../post/Post";
+import "./Allposts.css"
 
 class AllPosts extends Component {
 
@@ -9,9 +10,9 @@ class AllPosts extends Component {
         let {posts, chosenOne} = this.state;
         return (
             <div>
-                {/*{*/}
-                {/*    chosenOne && <h2>{chosenOne.title}</h2>*/}
-                {/*}*/}
+                {
+                    chosenOne && <div className={"chosenOne"}><Post post={chosenOne} noButton={true}/></div>
+                }
                 {posts.map(posts => {
                     return <Post
                     key={posts.id}
@@ -31,13 +32,10 @@ class AllPosts extends Component {
             })
     }
 
-    chooseOne(id) {
-        // let {posts} = this.state;
-        console.log(id)
-        // let findPost = posts.find(post => post.id === id);
-        // this.setState({chosenOne: findPost})
-        // console.log(findPost.title)
-        // this.setState({chosenOne: findPost});
+    chooseOne = (id) => {
+        let {posts} = this.state;
+        let findPost = posts.find(post => post.id === id);
+        this.setState({chosenOne: findPost})
     }
 }
 
