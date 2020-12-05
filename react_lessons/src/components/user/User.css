@@ -1,0 +1,11 @@
+.odd {
+    background-color: #61dafb;
+    width: 50%;
+    margin: 2px;
+}
+
+.even {
+    background-color: bisque;
+    width: 50%;
+    margin: 2px
+}
