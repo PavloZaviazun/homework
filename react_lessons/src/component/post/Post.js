@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "./Post.css"
 
+
 class Post extends Component {
     render() {
         let {post , chooseOne, noButton} = this.props;
