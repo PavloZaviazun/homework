@@ -1,5 +1,8 @@
 public class WorldMap {
 
-    Ukraine country = Ukraine.getInstance();
+    public static void main(String[] args) {
+        Ukraine country = Ukraine.getInstance();
+    }
 
 }
+
