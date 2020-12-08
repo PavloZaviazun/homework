@@ -8,7 +8,7 @@ class Users extends Component {
     userService = new UserService();
     posts = new Posts();
 
-    state = ({users: []});
+    state = {users: []};
 
     render() {
         let {users} = this.state;

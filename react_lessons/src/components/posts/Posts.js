@@ -5,7 +5,7 @@ class Posts extends Component {
 
     postService = new PostService();
 
-    state = ({posts: [{title: "something"}]});
+    state = {posts: [{title: "something"}]};
 
     render() {
         let {posts} = this.state;
