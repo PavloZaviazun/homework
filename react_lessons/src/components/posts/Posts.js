@@ -18,9 +18,10 @@ class Posts extends Component {
     }
 
     getPostsOfUsers(id) {
-        this.postService.getPosts(id).then(value =>{
-            console.log(value)
-            this.setState({posts: value})})
+        this.postService.getPosts(id)
+            .then(value => {
+                console.log(value);
+                this.setState({posts: value})})
     }
 
 }
