@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2a829e2c-66d8-4600-b993-89b9cfd78227" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../HTML/practice 3/BodoniCondC.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HTML/practice 3/FiraSans-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HTML/practice 3/FiraSans-Heavy.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HTML/practice 3/FiraSans-Light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HTML/practice 3/FiraSans-Medium.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HTML/practice 3/news-1-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HTML/practice 3/news-1-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HTML/practice 3/news-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HTML/practice 3/news-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/.idea/JS.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/lesson 3/task 1/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/lesson 4/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JS/lesson 9/Microsoft Access Database.accdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Factory/src/Neapolitan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Factory/src/Pizza.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Factory/src/Sicilian.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="lesson3_react" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1lKQS6IPp2ueiKuQVcy41n0gpxo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a829e2c-66d8-4600-b993-89b9cfd78227" name="Default Changelist" comment="" />
+      <created>1607343299430</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607343299430</updated>
+      <workItem from="1607343300569" duration="1539000" />
+      <workItem from="1607346302669" duration="178000" />
+    </task>
+    <task id="LOCAL-00001" summary="Singleton">
+      <created>1607344709553</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607344709553</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Singleton">
+      <created>1607346423891</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607346423891</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Singleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="Singleton" />
+  </component>
+</project>
