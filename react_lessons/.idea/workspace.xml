@@ -20,9 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="097366fe-2fe2-4888-85d1-bd367b03f4b7" name="Default Changelist" comment="React lesson4 practice">
-      <change afterPath="$PROJECT_DIR$/src/components/Person.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Film.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Films.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Planet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Planets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/FilmsService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/PlanetsService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2020_11_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2020_11_45__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2020_11_45__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2020_11_45__Default_Changelist_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/People.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/People.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Person.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Person.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/PeopleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/PeopleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

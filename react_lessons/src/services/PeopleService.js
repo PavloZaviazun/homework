@@ -6,7 +6,7 @@ export default class PeopleService {
             .then(value => value.json())
             .then(value => {
                 let {results} = value;
-                console.log(results)
+                // console.log(results)
                 return results;
             })
     }

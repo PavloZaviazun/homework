@@ -17,6 +17,7 @@ class People extends Component {
                         return <Person
                         key={index}
                         person={person}
+                        index={index}
                         />
                     })
                 }

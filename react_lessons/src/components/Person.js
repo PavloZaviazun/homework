@@ -1,14 +1,21 @@
 import React, {Component} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    withRouter,
+    Link
+} from 'react-router-dom';
 
 class Person extends Component {
     render() {
-        let {person} = this.props;
+        let {person, index, match:{url}} = this.props;
         return (
             <div>
-                {person.name}
+                {person.name} - <Link to={`${url}/${index}`}>info</Link>
             </div>
         );
     }
 }
 
-export default Person;
+export default withRouter(Person);
