@@ -17,11 +17,10 @@ class Posts extends Component {
         );
     }
 
-    getPostsOfUsers(id) {
-        this.postService.getPosts(id)
-            .then(value => {
-                console.log(value);
-                this.setState({posts: value})})
+    async getPostsOfUsers(id) {
+       const posts =  await this.postService.getPosts(id);
+
+       this.setState({posts})
     }
 
 }

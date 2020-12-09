@@ -9,7 +9,6 @@ class Users extends Component {
     posts = new Posts();
 
     state = {users: []};
-
     render() {
         let {users} = this.state;
         return (

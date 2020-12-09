@@ -8,7 +8,7 @@ class User extends Component {
         return (
             <div>
                 <div>{user.name} - {user.email} - {user.website}</div>
-                    <button onClick={() => getID(user.id)}>Random post</button>
+                    <button onClick={() => getID(user.id)}>Random post</button>zz
                     <hr/>
             </div>
         );
