@@ -21,15 +21,9 @@ class App extends Component {
                 <div><Link to={"/comments"}>Comments</Link></div>
                 <div className = "container">
                   <Switch>
-                    <Route path={"/users"}>
-                      <AllUsers/>
-                    </Route>
-                    <Route path={"/posts"}>
-                      <AllPosts/>
-                    </Route>
-                    <Route path={"/comments"}>
-                      <AllComments/>
-                    </Route>
+                    <Route path={"/users"} render={() => <AllUsers/>}/>
+                    <Route path={"/posts"} render={() => <AllPosts/>}/>
+                    <Route path={"/comments"} render={() => <AllComments/>}/>
                   </Switch>
                 </div>
               </div>

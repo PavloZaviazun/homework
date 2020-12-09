@@ -1,10 +1,9 @@
-export class UsersService {
+export default class UsersService {
 
     url = "https://jsonplaceholder.typicode.com/users";
 
-    getUsers(url) {
-        return fetch(url).then(value => value.json())
-            .then(usersFromAPI => usersFromAPI)
+    async getUsers() {
+        return await fetch(this.url).then(value => value.json())
     }
 
 }
