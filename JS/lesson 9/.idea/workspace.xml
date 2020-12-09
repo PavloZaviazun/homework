@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="64f56547-a036-435e-aba0-14ca0966be6f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../lesson 10/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson 10/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson 5/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson 5/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson 7/rules.html" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson 7/rules.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson 7/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson 7/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson 8/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson 8/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1kYBxoK2Vbw6A3i2kr05KY6ywMi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Tutor/project" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64f56547-a036-435e-aba0-14ca0966be6f" name="Default Changelist" comment="" />
+      <created>1605867895327</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605867895327</updated>
+      <workItem from="1605867896352" duration="15403000" />
+      <workItem from="1605954656223" duration="400000" />
+      <workItem from="1606471208867" duration="3869000" />
+      <workItem from="1606586100642" duration="605000" />
+      <workItem from="1606746434699" duration="32000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="509" y="85" key="FileChooserDialogImpl" timestamp="1606746464606">
+      <screen x="0" y="0" width="1458" height="864" />
+    </state>
+    <state x="509" y="85" key="FileChooserDialogImpl/0.0.1458.864/0.-1080.1842.1080@0.0.1458.864" timestamp="1606746464606" />
+    <state x="509" y="85" key="FileChooserDialogImpl/0.0.1458.864/0.-1080.1858.1080@0.0.1458.864" timestamp="1606475149986" />
+    <state x="509" y="85" key="FileChooserDialogImpl/0.0.1458.864@0.0.1458.864" timestamp="1605890592826" />
+  </component>
+</project>
