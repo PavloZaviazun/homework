@@ -20,20 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="097366fe-2fe2-4888-85d1-bd367b03f4b7" name="Default Changelist" comment="React lesson4 practice">
-      <change afterPath="$PROJECT_DIR$/src/components/Film.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Films.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Planet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Planets.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/FilmsService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/PlanetsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2020_11_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2020_11_45__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2020_11_45__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2020_11_45__Default_Changelist_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/People.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/People.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Person.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Person.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/PeopleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/PeopleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,14 +54,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Tutor/project" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -84,17 +72,6 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -144,6 +121,9 @@
       <workItem from="1607536791715" duration="39000" />
       <workItem from="1607536891934" duration="9000" />
       <workItem from="1607536909576" duration="2138000" />
+      <workItem from="1607676841539" duration="11000" />
+      <workItem from="1607684669523" duration="961000" />
+      <workItem from="1607685646628" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="React master">
       <created>1607161521235</created>
@@ -299,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607538070739</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="React lesson4 practice">
+      <created>1607541798662</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1607541798662</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
