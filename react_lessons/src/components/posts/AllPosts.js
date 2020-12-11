@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import PostsService from "../../services/PostsService";
 import Post from "./post/Post";
+import "./forPost.css"
+import {Route, Switch, withRouter} from 'react-router-dom';
+import PostDetail from "./post/PostDetail";
 
 class AllPosts extends Component {
 
@@ -9,6 +12,7 @@ class AllPosts extends Component {
 
     render() {
         let {posts} = this.state;
+        let {match : {url}} = this.props;
         return (
             <div>
                 {
@@ -19,6 +23,14 @@ class AllPosts extends Component {
                         />
                     })
                 }
+                <div className={"forPost"}>
+                    <Switch>
+                        <Route path={url + "/:idPost"} render={(props) => {
+                            const {match : {params: {idPost}}} = props;
+                            return <PostDetail key={idPost} idPost={idPost}/>
+                        }}/>
+                    </Switch>
+                </div>
             </div>
         );
     }
@@ -29,4 +41,4 @@ class AllPosts extends Component {
 
 }
 
-export default AllPosts;
+export default withRouter(AllPosts);

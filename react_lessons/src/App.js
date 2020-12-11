@@ -3,13 +3,7 @@ import "./App.css";
 import AllUsers from "./components/users/AllUsers";
 import AllComments from "./components/comments/AllComments";
 import AllPosts from "./components/posts/AllPosts";
-
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
 
 class App extends Component {
     render() {

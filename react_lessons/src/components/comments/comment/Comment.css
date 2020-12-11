@@ -5,3 +5,8 @@
 .even {
     background-color: azure;
 }
+
+.forComments {
+   background-color: darkgray;
+    min-height: 100px;
+}

@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import CommentsService from "../../services/CommentsService";
 import Comment from "./comment/Comment";
+import {Route, Switch, withRouter} from 'react-router-dom';
+import DefiniteComment from "./comment/DefiniteComment";
+
 
 class AllComments extends Component {
 
@@ -10,6 +13,7 @@ class AllComments extends Component {
 
     render() {
         let {comments} = this.state;
+        let {match:{url}} = this.props;
         return (
             <div>
                 {
@@ -22,6 +26,14 @@ class AllComments extends Component {
                         />
                     })
                 }
+                {<div className={"forComments"}>
+                    <Switch>
+                        <Route path={url + "/:id"} render={(props) => {
+                            const {match : {params : {id}}} = props;
+                            return  <DefiniteComment key={id} commentID={id}/>
+                        }}/>
+                    </Switch>
+                </div>}
             </div>
         );
     }
@@ -31,4 +43,4 @@ class AllComments extends Component {
     }
 }
 
-export default AllComments;
+export default withRouter(AllComments);

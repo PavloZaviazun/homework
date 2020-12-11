@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import UsersService from "../../services/UsersService";
 import User from "./user/User";
+import "./AllUsers.css";
+import {Route, Switch, withRouter} from 'react-router-dom';
+import UserDetails from "./user/UserDetails";
 
 class AllUsers extends Component {
     users = new UsersService();
@@ -8,6 +11,7 @@ class AllUsers extends Component {
 
     render() {
         let {users} = this.state;
+        let {match: {url}} = this.props;
         return (
             <div>
                 {
@@ -15,6 +19,16 @@ class AllUsers extends Component {
                     key={value.id}
                     user={value}
                     />)
+                }
+                {
+                    <div className={"output"}>
+                        <Switch>
+                            <Route path={`${url}/:id`} render={(props) => {
+                                const {match: {params: {id}}} = props;
+                                return <UserDetails userID={id} key={id}/>
+                            }}/>
+                        </Switch>
+                    </div>
                 }
             </div>
         );
@@ -26,4 +40,4 @@ class AllUsers extends Component {
 
 }
 
-export default AllUsers;
+export default withRouter(AllUsers);
