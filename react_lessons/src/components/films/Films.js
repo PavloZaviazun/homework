@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "./Films.css";
 import {
     BrowserRouter as Router,
     Switch,
@@ -13,7 +14,12 @@ class Films extends Component {
         console.log(films)
         return (
             <div>
-                {films.title}  <Link to={"/films/1"}>details</Link>
+                <Router>
+                    <div className={"filmsPosition"}><div>{films.title}</div><div><Link to={"/films/1"} className ={"button"}>Details</Link></div></div>
+                    <Switch>
+                        {/*<Route to={}/>*/}
+                    </Switch>
+                </Router>
             </div>
         );
     }
