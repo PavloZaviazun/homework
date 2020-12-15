@@ -1,4 +1,11 @@
 import React, {Component} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    withRouter
+} from 'react-router-dom';
 
 class Films extends Component {
     render() {
@@ -6,7 +13,7 @@ class Films extends Component {
         console.log(films)
         return (
             <div>
-                her
+                {films.title}  <Link to={"/films/1"}>details</Link>
             </div>
         );
     }
