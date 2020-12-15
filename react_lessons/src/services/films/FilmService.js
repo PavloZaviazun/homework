@@ -3,7 +3,8 @@ export default class FilmService {
     async getFilms() {
         return await fetch(this.url).then(value => value.json())
             .then(value => {
-                console.log(value)
+                let {results} = value;
+                return results;
             })
     }
 }
