@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 
-class Film extends Component {
+class Films extends Component {
     render() {
-        let {film} = this.props;
         return (
             <div>
-                {film.title}
+                herher
             </div>
         );
     }
 }
 
-export default Film;
+export default Films;

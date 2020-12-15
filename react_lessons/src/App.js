@@ -1,31 +1,40 @@
 import React, {Component} from 'react';
-import People from "./components/People";
-import Planets from "./components/Planets";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    withRouter
 } from 'react-router-dom';
-import Films from "./components/Films";
+import Films from "./components/films/Films";
+import "./App.css";
+import FilmService from "./services/films/FilmService";
 
 class App extends Component {
+
+    filmService = new FilmService();
+
     render() {
         return (
-            <div>
+            <div className={"main-container"}>
+                <img className={"logo"} src={'https://pyxis.nymag.com/v1/imgs/314/20c/5e25fc541fc4e0b84bc393e1e316f07b40-18-Star-Wars-Logo.2x.h473.w710.jpg'}/>
+                <div className={"films"}>
+                    <Films/>
+                </div>
                 <Router>
-                <div><Link to={"/people"}>People</Link></div>
-                <div><Link to={"/planets"}>Planets</Link></div>
-                <div><Link to={"/films"}>Films</Link></div>
+                    <Link to={"/films"}>Films</Link>
                 <Switch>
-                    <Route path={"/people"} render={() => <People/>}/>
-                    <Route path={"/planets"} render={() => <Planets/>}/>
                     <Route path={"/films"} render={() => <Films/>}/>
                 </Switch>
                 </Router>
             </div>
         );
     }
+
+    componentDidMount() {
+        this.filmService.getFilms()
+    }
+
 }
 
 export default App;

@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 
-class Planet extends Component {
+class People extends Component {
     render() {
-        let {planet} = this.props;
         return (
             <div>
-                {planet.name}
+               her
             </div>
         );
     }
 }
 
-export default Planet;
+export default People;
