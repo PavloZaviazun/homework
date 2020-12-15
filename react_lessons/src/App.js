@@ -39,8 +39,12 @@ class App extends Component {
         );
     }
 
-    getIDFilm = () => {
-
+    getIDFilm = (id) => {
+        let {films} = this.state;
+        films.find(value => {
+            let search = value.episode_id === id
+        })
+        console.log(id)
     }
 
     async componentDidMount() {
