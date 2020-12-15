@@ -25,6 +25,7 @@ class App extends Component {
                     {films.map(films => <Films
                         key={films.episode_id}
                         films={films}
+                        getIDFilm={this.getIDFilm}
                         />
                     )}
                 </div>
@@ -36,6 +37,10 @@ class App extends Component {
                 {/*</Router>*/}
             </div>
         );
+    }
+
+    getIDFilm = () => {
+
     }
 
     async componentDidMount() {

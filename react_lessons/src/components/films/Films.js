@@ -7,18 +7,19 @@ import {
     Link,
     withRouter
 } from 'react-router-dom';
+import Film from "./Film";
 
 class Films extends Component {
     render() {
-        let {films} = this.props;
+        let {films, getIDFilm} = this.props;
         console.log(films)
         return (
             <div>
                 <Router>
-                    <div className={"filmsPosition"}><div>{films.title}</div><div><Link to={"/films/1"} className ={"button"}>Details</Link></div></div>
-                    <Switch>
-                        {/*<Route to={}/>*/}
-                    </Switch>
+                    <div className={"filmsPosition"}><div>{films.title}</div><div><Link to={`/films/${films.episode_id}`} className ={"button"} onClick={getIDFilm() => }>Details</Link></div></div>
+                    {/*<Switch>*/}
+                    {/*    <Route to={`/films/${films.episode_id}`} render={() => <Film/>}/>*/}
+                    {/*</Switch>*/}
                 </Router>
             </div>
         );
