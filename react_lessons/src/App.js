@@ -22,7 +22,7 @@ class App extends Component {
             <div className={"main-container"}>
                 <img className={"logo"} src={'https://pyxis.nymag.com/v1/imgs/314/20c/5e25fc541fc4e0b84bc393e1e316f07b40-18-Star-Wars-Logo.2x.h473.w710.jpg'}/>
                 <div className={"films"}>
-                    {films.map((films, index) => {
+                    {films && films.map((films, index) => {
                         return <Films
                         key={index}
                         films={films}
