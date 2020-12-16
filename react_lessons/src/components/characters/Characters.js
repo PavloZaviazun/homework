@@ -13,21 +13,17 @@ import Character from "./Character";
 class Characters extends Component {
 
     characterService = new CharacterService();
-    state ={character: 0}
+    state ={character: null}
 
     render() {
         let {idFilm} = this.props;
         let {character} = this.state;
+        // console.log(this.props)
         return (
-            <div>
-                <Router>
-                    <Link to={`/films/${idFilm}/character/${character.name}`} className={"button-character"}>
+            <div className={"button-character"}>
+                {character && <Link to={`/films/${idFilm}/character/${character.name}`} className={"characters"}>
                         {character.name}
-                    </Link>
-                    <Switch>
-                        <Route path={`/films/${idFilm}/character/${character.name}`} render={() => <Character character={character}/>}/>
-                    </Switch>
-                </Router>
+                </Link>}
             </div>
         );
     }
@@ -39,4 +35,4 @@ class Characters extends Component {
 
 }
 
-export default Characters;
+export default withRouter(Characters);
