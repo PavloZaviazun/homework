@@ -17,6 +17,7 @@
 }
 
 .filmsList {
+  box-sizing: border-box;
   min-height: 150px;
   background-color: darkgray;
   margin: 10px;
@@ -28,6 +29,7 @@
 }
 
 .filmsDescription {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +37,7 @@
   background-color: darkgray;
   margin: 10px 10px 10px 0px;
   border-radius: 5px;
-  width: 70%;
+  width: calc(70% - 30px);
   padding: 5px;
   line-height: 27px;
 }
@@ -45,6 +47,7 @@
 }
 
 .filmsDetails {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
