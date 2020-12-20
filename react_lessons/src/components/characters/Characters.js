@@ -9,15 +9,18 @@ class Characters extends Component {
     state ={character: null}
 
     render() {
-        let {idFilm} = this.props;
+        let {idFilm, getDeleteName} = this.props;
         let {character} = this.state;
-        return (
 
+        return (
             <div className={"button-character"}>
                 {character && <Link to={`/films/${idFilm}/character/${character.name}`} className={"characters"}>
                         {character.name}
                 </Link>}
+                <button onClick={() => getDeleteName(character.url)}>her</button>
             </div>
+
+
         );
     }
 

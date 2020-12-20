@@ -3,13 +3,19 @@ import "./Films.css"
 import Characters from "../characters/Characters";
 import {Route, Switch, withRouter} from 'react-router-dom';
 import Character from "../characters/Character";
+import CharacterService from "../../services/characters/CharacterService";
 
 class Details extends Component {
 
     state = {characters:[]};
 
+
+
     render() {
+        let {characters} = this.state;
         let {details} = this.props;
+        console.log(characters);
+
         return (
             <div className={"details"}>
                 <u>Director</u> : {details.director}<br/>
@@ -19,7 +25,14 @@ class Details extends Component {
 
 
                         <div className={"button-area"}>
-                        {details.characters.map((url, index) => <Characters key={index} url={url} idFilm={details.episode_id}/>)}
+                        {details.characters.map((url, index) => {
+                            return <Characters
+                                key={index}
+                                url={url}
+                                idFilm={details.episode_id}
+                                getDeleteName={this.getDeleteName}
+                            />
+                        })}
 
                         <Switch>
 
@@ -35,6 +48,19 @@ class Details extends Component {
             </div>
         );
     }
+
+    componentDidMount() {
+        let {details} = this.props;
+        this.setState({characters : details.characters});
+    }
+
+    character = new CharacterService();
+    getDeleteName = (apiUrl) => {
+        let {details} = this.props;
+        let filter = details.characters.filter(value => value !== apiUrl);
+        this.setState({characters :filter})
+    }
+
 }
 
 export default withRouter(Details);
