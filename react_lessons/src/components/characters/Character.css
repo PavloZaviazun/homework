@@ -1,20 +1,35 @@
+.button-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .button-character {
     background-color: coral;
     margin: 5px 5px 5px 0px;
     padding: 2px 4px;
     border-radius: 3px;
-    color: gainsboro;
     line-height: normal;
 }
 
-.button-character:hover {
-    color: white;
+.absolute-position {
+    box-sizing: border-box;
+    min-height: 150px;
+    background-color: darkgray;
+    margin: 10px 10px 10px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    left: calc(30% + 20px);
+    min-width: 300px;
 }
 
-/*.absolute-position {*/
-/*    position: absolute;*/
-/*    right: 0;*/
-/*top: 0;*/
-/*}*/
 
+.characters {
+    text-decoration: none;
+    color: gainsboro;
+}
+.characters:hover {
+    color: white;
+}
 

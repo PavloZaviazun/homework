@@ -21,9 +21,5 @@
     width: 100%;
 }
 
-.characters {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    text-decoration: none;
-}
+
+

@@ -1,14 +1,7 @@
 import React, {Component} from 'react';
 import CharacterService from "../../services/characters/CharacterService";
 import "./Character.css"
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    withRouter
-} from 'react-router-dom';
-import Character from "./Character";
+import {Link, withRouter} from 'react-router-dom';
 
 class Characters extends Component {
 
@@ -18,8 +11,8 @@ class Characters extends Component {
     render() {
         let {idFilm} = this.props;
         let {character} = this.state;
-        // console.log(this.props)
         return (
+
             <div className={"button-character"}>
                 {character && <Link to={`/films/${idFilm}/character/${character.name}`} className={"characters"}>
                         {character.name}

@@ -1,12 +1,5 @@
 import React, {Component} from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    withRouter
-} from 'react-router-dom';
-import CharacterService from "../../services/characters/CharacterService";
+import {withRouter} from 'react-router-dom';
 import PersonService from "../../services/people/PersonService";
 
 class Character extends Component {
@@ -15,21 +8,27 @@ class Character extends Component {
     state = {person: null};
 
     render() {
-        // console.log(this.props)
-        let {match: {params: {id}}} = this.props;
+        let {match: {params: {name}}} = this.props;
         let {person} = this.state;
         return (
             <div className={"absolute-position"}>
-                {id}
-                {person && person.height}
+
+                {person &&
+                <div>
+                    <div><u>Name</u> : {person.name}</div>
+                    <div><u>Height</u> : {person.height}</div>
+                    <div><u>Mass</u> : {person.mass}</div>
+                    <div><u>Gender</u> : {person.gender}</div>
+                </div>
+
+                }
             </div>
         );
     }
 
     async componentDidMount() {
-        console.log("b")
-        let {match: {params: {id}}} = this.props;
-        return await this.person.getPerson(id).then(value => this.setState({person: value}))
+        let {match: {params: {name}}} = this.props;
+        return await this.person.getPerson(name).then(value => this.setState({person: value}))
     }
 
 }
