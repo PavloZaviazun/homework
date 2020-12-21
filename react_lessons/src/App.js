@@ -16,7 +16,7 @@ class App extends Component {
         return (
             <div className={"main-container"}>
                 <Router>
-                <img className={"logo"} src={'https://pyxis.nymag.com/v1/imgs/314/20c/5e25fc541fc4e0b84bc393e1e316f07b40-18-Star-Wars-Logo.2x.h473.w710.jpg'}/>
+                <img className={"logo"} alt={"logo"} src={'https://pyxis.nymag.com/v1/imgs/314/20c/5e25fc541fc4e0b84bc393e1e316f07b40-18-Star-Wars-Logo.2x.h473.w710.jpg'}/>
                 <div className={"firstBlock"}>
                 <div className={"filmsList"}>
                     {films.map(films => <Films
@@ -34,7 +34,7 @@ class App extends Component {
                 <div className={"secondBlock"}>
                 {defFilm && <div className={"filmsDetails"}>
                         <div className={"titleCenter"}><h4>Details</h4></div>
-                        <Details details={defFilm}/>
+                        <Details details={defFilm} key={defFilm.episode_id}/>
                 </div>}
                 </div>
                 </Router>

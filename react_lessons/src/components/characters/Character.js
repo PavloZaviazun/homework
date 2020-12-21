@@ -8,7 +8,6 @@ class Character extends Component {
     state = {person: null};
 
     render() {
-        let {match: {params: {name}}} = this.props;
         let {person} = this.state;
         return (
             <div className={"absolute-position"}>

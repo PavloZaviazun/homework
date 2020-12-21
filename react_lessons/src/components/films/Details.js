@@ -7,14 +7,13 @@ import CharacterService from "../../services/characters/CharacterService";
 
 class Details extends Component {
 
-    state = {characters:[]};
+    state = {characters:[], forDelete: []};
 
 
 
     render() {
         let {characters} = this.state;
         let {details} = this.props;
-        console.log(characters);
 
         return (
             <div className={"details"}>
@@ -25,9 +24,10 @@ class Details extends Component {
 
 
                         <div className={"button-area"}>
-                        {details.characters.map((url, index) => {
+                        {characters.map((url, index) => {
+                            let id = url.slice(-3).replaceAll("/", "");
                             return <Characters
-                                key={index}
+                                key={id}
                                 url={url}
                                 idFilm={details.episode_id}
                                 getDeleteName={this.getDeleteName}
@@ -35,15 +35,12 @@ class Details extends Component {
                         })}
 
                         <Switch>
-
                             <Route path={`/films/${details.episode_id}/character/:name`} render={(props) => {
                                 let {match :{params:{name}}} = props;
                                 return <Character key={name}/>
                             }}/>
                         </Switch>
                         </div>
-
-
                 }
             </div>
         );
@@ -57,10 +54,14 @@ class Details extends Component {
     character = new CharacterService();
     getDeleteName = (apiUrl) => {
         let {details} = this.props;
-        let filter = details.characters.filter(value => value !== apiUrl);
-        this.setState({characters :filter})
+        let {forDelete} = this.state;
+        forDelete.push(apiUrl);
+        let filter = details.characters;
+        for (let i = 0; i < forDelete.length; i++) {
+            filter = filter.filter(value => value !== forDelete[i])
+        }
+        this.setState({characters: filter})
     }
-
 }
 
 export default withRouter(Details);
