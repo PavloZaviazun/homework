@@ -12,7 +12,7 @@ return (
         <div>
 
             <Header/>
-            <Product/>
+            {/*<Product/>*/}
             <ProductList/>
         </div>)
 
