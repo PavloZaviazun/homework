@@ -10,7 +10,9 @@ export function reducer(state = initialState, action) {
             action.payload !== null && state.phrases.push(action.payload);
             return {...state};
         case REMOVE_PHRASE :
-            let updatedPhrases = state.phrases.filter(value => value !== action.payload)
+            let updatedPhrases = state.phrases.filter((value, index) => {
+                if(index !== action.payload) return value;
+            })
             state.phrases = updatedPhrases;
             return {...state};
         default :

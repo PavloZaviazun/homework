@@ -7,31 +7,42 @@ function App() {
   const dispatch = useDispatch();
   const store = useSelector(state => state);
 
-  function takePhrase() {
-    dispatch(addPhrase(inputValue));
+  function takePhrase(event) {
+      event.preventDefault();
+      // console.log(inputValue);
+      console.log("a")
+
   }
 
-  function deletePhrase() {
-    dispatch(removePhrase(removeValue));
+    let inputValue = null;
+    let removeValue = null;
+
+  const handleSubmitAdd = (event: React.FormEvent) => {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      dispatch(addPhrase(formData.get("inputValue")));
   }
 
-  let inputValue = null;
-  let removeValue = null;
+    function handleSubmitRemove(event: React.FormEvent) {
+        event.preventDefault();
+        const formSelector = new FormData(event.target);
+        dispatch(removePhrase(+formSelector.get("selector")));
+    }
 
   return (
       <div className={"mainDiv"}>
-        <div><input placeholder={"input text"} className={"inputStyle"} onChange={e => {
-          inputValue = e.target.value;
-        }} />
-        <button className={"buttonStyle"} onClick={() => takePhrase()}>Add to list</button></div>
-        <div>
-            <select className={"selectStyle"} onChange={e => {
-                removeValue = e.target.value;
-            }}>
-                {store.phrases.map((phrase, index) => <option value={phrase} key={index}> {phrase} </option>)}
+        <form onSubmit={handleSubmitAdd}>
+        <div><input placeholder={"input text"} className={"inputStyle"} name={"inputValue"}/>
+        <button className={"buttonStyle"}>Add to list</button></div>
+        </form>
+          <form onSubmit={handleSubmitRemove}>
+        <div><select className={"selectStyle"} name={"selector"}>
+                {store.phrases.map((phrase, index) =>
+                    <option value={index} key={index}> {phrase} </option>)}
             </select>
-            <button className={"buttonStyle"} onClick={() => deletePhrase()}>Remove</button>
+            <button className={"buttonStyle"} >Remove</button>
         </div>
+          </form>
       </div>
   )
 }
