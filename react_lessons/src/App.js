@@ -9,7 +9,6 @@ function App() {
 
   function takePhrase(event) {
       event.preventDefault();
-      // console.log(inputValue);
       console.log("a")
 
   }
