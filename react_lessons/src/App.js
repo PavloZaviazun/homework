@@ -1,26 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {useDispatch, useSelector} from "react-redux";
+import {addPhrase, removePhrase} from "./redux/reducer/action-creators";
 
 function App() {
-  s
+
+  const dispatch = useDispatch();
+  const store = useSelector(state => state);
+
+  function takePhrase() {
+    dispatch(addPhrase(inputValue));
+  }
+
+  function deletePhrase() {
+    dispatch(removePhrase(removeValue));
+  }
+
+  let inputValue = null;
+  let removeValue = null;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className={"mainDiv"}>
+        <div><input placeholder={"input text"} className={"inputStyle"} onChange={e => {
+          inputValue = e.target.value;
+        }} />
+        <button className={"buttonStyle"} onClick={() => takePhrase()}>Add to list</button></div>
+        <div>
+            <select className={"selectStyle"} onChange={e => {
+                removeValue = e.target.value;
+            }}>
+                {store.phrases.map((phrase, index) => <option value={phrase} key={index}> {phrase} </option>)}
+            </select>
+            <button className={"buttonStyle"} onClick={() => deletePhrase()}>Remove</button>
+        </div>
+      </div>
+  )
 }
 
 export default App;
