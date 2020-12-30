@@ -7,15 +7,6 @@ function App() {
   const dispatch = useDispatch();
   const store = useSelector(state => state);
 
-  function takePhrase(event) {
-      event.preventDefault();
-      console.log("a")
-
-  }
-
-    let inputValue = null;
-    let removeValue = null;
-
   const handleSubmitAdd = (event: React.FormEvent) => {
       event.preventDefault();
       const formData = new FormData(event.target);
