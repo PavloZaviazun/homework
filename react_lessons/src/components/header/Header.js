@@ -4,16 +4,14 @@ import {useSelector} from "react-redux";
 export function Header() {
 
     const {cart:{cart}, wishlist:{wishlist}} = useSelector(state => state);
+    let sumCart = cart.reduce((acc, value) => {return acc + value.price;}, 0);
+    let sumWishlist = wishlist.reduce((acc, value) => {return acc + value.price;}, 0)
     return (
         <header className={"mainHeader"}>
             <div className={"shopName"}>Cookies</div>
             <div>
-            <div title={cart.reduce((acc, value) => {
-                return acc + value.price;
-            }, 0)} className={"cartHeader"}>Cart - {cart.length}</div>
-            <div title={wishlist.reduce((acc, value) => {
-                return acc + value.price;
-            }, 0)} className={"wishlistHeader"}>Wishlist - {wishlist.length}</div>
+            <div title={sumCart.toFixed(2)} className={"cartHeader"}>Cart - {cart.length}</div>
+            <div title={sumWishlist.toFixed(2)} className={"wishlistHeader"}>Wishlist - {wishlist.length}</div>
             </div>
         </header>
     )
