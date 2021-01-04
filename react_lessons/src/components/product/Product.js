@@ -1,28 +1,35 @@
 import "./Product.css";
-import cart from "./cartBlack.png";
-import wish from "./wishBlack.png";
+import cartBlack from "./cartBlack.png";
+import cartGreen from "./cartGreen.png"
+import wishBlack from "./wishBlack.png";
+import wishRed from "./wishRed.png"
 
 function cutTitle(title) {
-    let updatedTitle = null;
-    if(title.length > 30) return updatedTitle = title.substring(0, 26) + "...";
+    if(title.length > 30) return title.substring(0, 26) + "...";
     return title;
 }
 
 function Product(props) {
-    const {product: {title}, product: {description}, product:{image}, product:{price}} = props;
-
+    const {isAddedtoWishlist, isAddedtoCart, product, toggleCart, toggleWishlist,
+        product: {title}, product:{image}, product:{price}} = props;
     return (
         <div className={"product"}>
             <div className={"titleStyle"}>{cutTitle(title)}</div>
             <div className={"imageBlock"}>
                 <div>
-                    <img src={image} className={"imageStyle"}/>
+                    <img alt={title} src={image} className={"imageStyle"}/>
                 </div>
             </div>
             <div>{price} $</div>
             <div className={"bottomProduct"}>
-                <div><img className={"cart"} src={cart} title={"Add to cart"}/></div>
-                <div><img className={"wish"} src={wish} title={"Add to wishlist"}/></div>
+                <div><img onClick={() => toggleCart(product)} className={"cart"}
+                          src={isAddedtoCart ? cartGreen : cartBlack}
+                          title={isAddedtoCart ? "Remove from cart" : "Add to cart"}
+                          alt={"cart"}/></div>
+                <div><img onClick={() => toggleWishlist(product)} className={"wish"}
+                          src={isAddedtoWishlist ? wishRed : wishBlack}
+                          title={isAddedtoWishlist ? "Remove from wishlist" : "Add to wishlist"}
+                          alt={"wishlist"}/></div>
             </div>
         </div>
     )

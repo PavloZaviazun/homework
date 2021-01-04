@@ -1,32 +1,41 @@
-import {useEffect} from "react";
+import {useEffect, useCallback} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {SET_PRODUCTS} from "../../redux/action-types";
-import {setProducts} from "../../redux/action-creators";
+import {setCart, setProducts, setWishlist} from "../../redux/action-creators";
 import Product from "../product/Product";
 import "./ProductList.css"
 
 
 export function ProductList() {
     const dispatch = useDispatch();
-    const {products: {products}} = useSelector(state => state);
-    console.log(products);
+    const {products: {products}, cart:{cart}, wishlist:{wishlist}} = useSelector(state => state);
 
-    useEffect(async () => {
-        const dataProducts = await fetchProducts();
+    useEffect(() => {
+        fetchProducts();
+    });
+
+    const fetchProducts = useCallback(async () => {
+        const dataProducts = await fetch("https://fakestoreapi.com/products").then(products => products.json());
         dispatch(setProducts(dataProducts));
-    }, []);
+    }, [dispatch])
 
-    async function fetchProducts() {
-        return await fetch("https://fakestoreapi.com/products").then(products => products.json());
+    function toggleCart(product) {
+        dispatch(setCart(product))
+    }
+
+    function toggleWishlist(product) {
+        dispatch(setWishlist(product))
     }
 
     return (
         <div className={"productList"}>
-            <div className={"quantity"}>Product quantity - {products.length}</div>
             {products.map(product => {
                 return <Product
                 key={product.id}
                 product={product}
+                toggleCart={toggleCart}
+                toggleWishlist={toggleWishlist}
+                isAddedtoCart={!!cart.find(({id}) => id === product.id)}
+                isAddedtoWishlist={!!wishlist.find(({id}) => id === product.id)}
                 />
             })}
         </div>

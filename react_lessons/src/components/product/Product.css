@@ -26,8 +26,16 @@
     width: 30px;
 }
 
+.cart:hover {
+    cursor: pointer;
+}
+
 .wish {
     width: 30px;
+}
+
+.wish:hover {
+    cursor: pointer;
 }
 
 .bottomProduct {

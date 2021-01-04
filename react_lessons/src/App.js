@@ -10,7 +10,6 @@ function App() {
     <ProductList/>
   </div>
   )
-
 }
 
 export default App;
