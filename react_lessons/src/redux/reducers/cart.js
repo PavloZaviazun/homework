@@ -4,7 +4,7 @@ const initialState = {
     cart: []
 }
 
-export default (state = initialState, action) => {
+const cart =  (state = initialState, action) => {
     switch(action.type) {
         case SET_CART:
             const updatedCart = state.cart.filter(
@@ -16,3 +16,5 @@ export default (state = initialState, action) => {
             return state;
     }
 }
+
+export default cart;

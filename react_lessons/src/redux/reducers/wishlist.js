@@ -4,7 +4,7 @@ const initialState = {
     wishlist : []
 }
 
-export default (state = initialState, action) => {
+const wishlist =  (state = initialState, action) => {
     switch (action.type) {
         case SET_WISHLIST :
             const updatedWishlist = state.wishlist.filter(
@@ -16,3 +16,5 @@ export default (state = initialState, action) => {
             return state;
     }
 }
+
+export default wishlist;

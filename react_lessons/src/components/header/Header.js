@@ -1,7 +1,7 @@
 import "./Header.css";
 import {useSelector} from "react-redux";
 
-export function Header() {
+const Header = () => {
 
     const {cart:{cart}, wishlist:{wishlist}} = useSelector(state => state);
     let sumCart = cart.reduce((acc, value) => {return acc + value.price;}, 0);
@@ -16,3 +16,5 @@ export function Header() {
         </header>
     )
 }
+
+export default Header;

@@ -4,7 +4,7 @@ const initialState = {
     products : []
 };
 
-export default (state = initialState, action) => {
+const products = (state = initialState, action) => {
     switch (action.type) {
         case SET_PRODUCTS :
             return {...state, products: action.payload}
@@ -12,3 +12,4 @@ export default (state = initialState, action) => {
             return state;
     }
 }
+export default products;
