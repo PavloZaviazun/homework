@@ -1,0 +1,10 @@
+.mainHeader {
+    display: flex;
+    justify-content: space-around;
+    background-color: ghostwhite;
+    padding: 5px;
+}
+
+.shopName {
+    font-size: 25pt;
+}
