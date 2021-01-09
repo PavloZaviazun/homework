@@ -11,7 +11,7 @@ export const CustomerArea = () => {
                 <div className={"premium-first"}>Попробуйте</div>
                 <div className={"premium-second"}>PREMIUM</div>
             </div>
-            <div className={"icons"}><img src={libraGrey} /></div>
+            <div className={"icons"}><img src={libraGrey} onMouseOver={() => {console.log("her")}}/></div>
             <div className={"icons"}><img src={wishlistGrey} /></div>
             <div className={"icons"}><img src={cartGrey}/></div>
         </div>

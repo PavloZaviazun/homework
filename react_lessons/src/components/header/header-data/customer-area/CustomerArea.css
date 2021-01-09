@@ -8,6 +8,10 @@
     margin: 0 5px;
 }
 
+.icons:hover {
+    cursor: pointer;
+}
+
 .icons img {
     height: 30px;
 }
