@@ -1,5 +1,7 @@
 import "./Header.css";
 import topBanner from  "../../images/top-banner.jpg";
+import {HeaderMenu} from "./header-menu";
+import {HeaderData} from "./header-data";
 
 
 export const Header = () => {
@@ -10,7 +12,8 @@ export const Header = () => {
                 <img src={topBanner} alt={"Everything for cozy holidays"}/>
             </div>
         <div className={"header-body"}>
-            Header
+            <HeaderMenu/>
+            <HeaderData/>
         </div>
         </header>
     )

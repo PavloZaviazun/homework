@@ -1,0 +1,44 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+    width: 45%;
+}
+
+.search-input {
+    box-sizing: border-box;
+    height: 40px;
+    width: calc(100% - 80px);
+    padding-left: 32px;
+    font-size: 11pt;
+    border: 0;
+    border-radius: 3px 0 0 3px;
+    background-image: url("https://www.seekpng.com/png/small/12-121965_icons-logos-emojis-search-icon-png-grey.png");
+    background-position-y: 10px;
+    background-position-x: 7px;
+    background-repeat: no-repeat;
+    background-size: 18px;
+
+}
+
+.search-button {
+    box-sizing: border-box;
+    height: 40px;
+    width: 80px;
+    background-color: #00a046;
+    border-radius: 0 3px 3px 0;
+    font-size: 16px;
+    color: white;
+    border: 0;
+}
+
+.search-button:hover {
+    background-color: #00BC52;
+    cursor: pointer;
+}
+
+form {
+    width: 100%;
+}
+
+

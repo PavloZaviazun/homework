@@ -1,0 +1,22 @@
+.product-catalog {
+    font-size: 12pt;
+    font-weight: bold;
+    border: 1px solid #89929C;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 40px;
+    min-width: 188px;
+    margin: 0 25px;
+}
+
+.product-catalog img {
+    height: 31px;
+    padding: 0 7px;
+}
+
+.product-catalog:hover {
+    background-color: #2A3B4C;
+    cursor: pointer;
+}

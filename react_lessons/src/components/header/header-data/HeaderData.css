@@ -1,0 +1,10 @@
+.header-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 25px;
+}
+

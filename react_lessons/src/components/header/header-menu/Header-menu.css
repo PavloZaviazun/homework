@@ -1,0 +1,9 @@
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-menu {
+    list-style: none;
+    display: flex;
+}

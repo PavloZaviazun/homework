@@ -1,0 +1,48 @@
+.customer-area {
+    display: flex;
+    align-items: center;
+}
+
+.icons {
+    width: 60px;
+    margin: 0 5px;
+}
+
+.icons img {
+    height: 30px;
+}
+
+.premium {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    padding: 0 3px;
+    border-radius: 3px;
+    margin: 0 10px;
+}
+
+.premium:hover {
+    cursor: pointer;
+    background-color: #4E5C6A;
+    transition: 0.5s;
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.premium-first {
+    color: #D2D2D2;
+    font-size: 7.5pt;
+}
+
+.premium-second {
+    background-color: #471A7B;
+    color: #F7D869;
+    padding: 3px 7px;
+    font-size: 8pt;
+    border-radius: 3px;
+}
+
+
