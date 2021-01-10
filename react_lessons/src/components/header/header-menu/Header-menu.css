@@ -9,25 +9,64 @@
 }
 
 .empty-div {
-    width: 43%;
+    width: 41%;
 }
 
-a {
+.header-menu a {
     text-decoration: none;
     color: white;
 }
 
-a:hover {
+a.header-menu :hover {
     text-decoration: underline;
+    color: white;
 }
 
 .menu-bold {
     font-size: 9pt;
     font-weight: bold;
-    cursor: pointer;
+}
+
+.header-menu ul{
+    margin: 2px;
+}
+
+.top-menu li {
+    width: max-content;
 }
 
 .not-active {
     color: #41505F;
 }
 
+.phone-icon {
+    height: 14px;
+    position: relative;
+    bottom: 2px;
+}
+
+.user-icon {
+    height: 14px;
+}
+
+.arrow-icon {
+    height: 9px;
+    position: relative;
+    left: 7px;
+}
+
+.popup-button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+.popup-button div {
+    color: white;
+}
+
+.modal-body {
+    font-size: 12pt;
+}

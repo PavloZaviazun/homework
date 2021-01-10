@@ -1,0 +1,48 @@
+.left-menu {
+    color: #3e77aa;
+    font-size: 14px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    height: 575px;
+    position: relative;
+    bottom: 8px;
+}
+
+.left-menu:hover {
+    box-sizing: border-box;
+    border-radius: 3px;
+    /*box-shadow: 1px 1px 1px 1px lightgrey;*/
+}
+
+.left-menu li {
+    height: 31px;
+}
+
+.left-menu div{
+    padding: 5px 0 5px 5px;
+}
+
+.left-menu a {
+    display: flex;
+    justify-content: space-between;
+    color: #3e77aa;
+}
+
+.left-menu a:hover {
+    color: red;
+    background-color: #FCFCEE;
+    transition: 0.5s;
+}
+
+.left-menu ul {
+    list-style: none;
+}
+
+.left-menu-mage {
+    margin: 0 12px 0 12px;
+}
+
+.arrow-right {
+    height: 9px;
+    margin-right: 14px;
+}

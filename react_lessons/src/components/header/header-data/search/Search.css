@@ -1,8 +1,10 @@
 .search {
+    width: 46%;
+}
+
+form {
     display: flex;
-    flex-direction: row;
-    margin-right: 15px;
-    width: 45%;
+    width: 100%;
 }
 
 .search-input {
@@ -37,8 +39,6 @@
     cursor: pointer;
 }
 
-form {
-    width: 100%;
-}
+
 
 

@@ -1,0 +1,5 @@
+.body-component {
+    font-size: 12pt;
+    display: flex;
+    justify-content: center;
+}
