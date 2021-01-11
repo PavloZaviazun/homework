@@ -4,7 +4,7 @@ import {product} from "./product";
 import {wishlist} from "./wishlist";
 
 export const reducer = combineReducers({
-    cart,
+    // cart,
     product,
-    wishlist
+    // wishlist
 })

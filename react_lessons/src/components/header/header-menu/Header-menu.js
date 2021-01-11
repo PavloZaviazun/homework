@@ -1,13 +1,7 @@
-import  phone from "../../../images/phone.png";
+import phone from "../../../images/phone.png";
 import user from "../../../images/user.png";
 import arrow from "../../../images/arrow.png";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    withRouter
-} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export const HeaderMenu = () => {
 
@@ -18,7 +12,7 @@ export const HeaderMenu = () => {
                     <li className={"menu-bold"}>
                         <button type="button" className={"popup-button"} data-toggle="modal" data-target="#exampleModalCentered" >
                             <div>
-                                <img src={phone} className={"phone-icon"}/> (044) 537-02-22<img src={arrow} className={"arrow-icon"}/>
+                                <img src={phone} className={"phone-icon"} alt={"phone"}/> (044) 537-02-22<img src={arrow} className={"arrow-icon"} alt={"arrow"}/>
                             </div>
                         </button>
                         </li>
@@ -33,7 +27,7 @@ export const HeaderMenu = () => {
                     <li><span className={"not-active"}>RU |</span> <Link to={""}>UA</Link></li>
                     <li>Город <Link to={""}>Киев</Link></li>
                     <li>Здравствуйте, <span className={"menu-bold"}><img src={user}
-                    className={"user-icon"}/> войдите в личный кабинет</span></li>
+                    className={"user-icon"} alt={"user"}/> войдите в личный кабинет</span></li>
                 </ul>
             </div>
         </div>

@@ -1,22 +1,20 @@
 import {Header} from "./components/header";
 import {Body} from "./components/body";
 import "./App.css";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    withRouter
-} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {store} from "./redux";
+import {Provider} from "react-redux";
 
 export const App = () => {
 
   return (
       <Router>
-      <div>
-        <Header/>
-        <Body/>
-      </div>
+          <Provider store={store}>
+              <div>
+                  <Header/>
+                  <Body/>
+              </div>
+          </Provider>
       </Router>
   )
 }

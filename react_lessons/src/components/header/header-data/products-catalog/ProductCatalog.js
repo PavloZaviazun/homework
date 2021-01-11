@@ -5,7 +5,7 @@ export const ProductCatalog = () => {
     return(
         <div className={"product-catalog"}>
             <div>
-                <img src={imageCatalog}/>
+                <img src={imageCatalog} alt={"imageCatalog"}/>
             </div>
             <div>
                 Каталог товаров

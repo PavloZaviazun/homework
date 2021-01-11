@@ -16,18 +16,18 @@ export const CustomerArea = () => {
             </div>
             <div className={"icons"}>
                 <div>
-                    <img src={libraGrey} />
+                    <img src={libraGrey} alt={"libra"}/>
                 </div>
             </div>
             <div className={"icons"}>
                 <div>
-                    <img src={wishlistGrey} />
+                    <img src={wishlistGrey} alt={"wishlist"}/>
                     <div className={"popup"}>wishlist</div>
                 </div>
             </div>
             <div className={"icons"}>
                 <div>
-                    <img src={cartGrey}/>
+                    <img src={cartGrey} alt={"cart"}/>
                     <div className={"popup"}>cart</div>
                 </div>
             </div>

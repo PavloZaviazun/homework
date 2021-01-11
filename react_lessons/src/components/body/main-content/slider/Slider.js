@@ -7,7 +7,11 @@ import slider6 from "../../../../images/sliders/slider6.jpg";
 import slider7 from "../../../../images/sliders/slider7.jpg";
 import slider8 from "../../../../images/sliders/slider8.jpg";
 import slider9 from "../../../../images/sliders/slider9.jpg";
-import {useState, useEffect} from 'react';
+import sliderArrowRight from "../../../../images/sliderArrowRight.png";
+import sliderArrowLeft from "../../../../images/sliderArrowLeft.png";
+import {Link} from 'react-router-dom';
+
+import {useEffect, useState} from 'react';
 
 export const Slider = () => {
 
@@ -24,17 +28,28 @@ export const Slider = () => {
 
     return (
         <div className={"slider"}>
-            <img src={images[slider]} alt={"slider"}/>
-            <button onClick={() => {
-                clearTimeout(timeout);
-                if(slider !== 0) return setSlider(slider - 1);
-                return setSlider (8)
-            }}>Prev</button>
-            <button onClick={() => {
-                clearTimeout(timeout);
-                if(slider < 8) return setSlider(slider + 1);
-                return setSlider(0);
-            }}>Next</button>
+            <div><img className="slide-show" src={images[slider]} alt={"slider"}/></div>
+            <div className={"vse-akcii"}>
+                <div className={"div-vse-akcii"}>
+                    <Link to={""}>Все акции</Link> count
+                </div>
+            </div>
+            <div className={"div-sliderArrow"}>
+                <div>
+                    <img src={sliderArrowLeft} onClick={() => {
+                        clearTimeout(timeout);
+                        if(slider !== 0) return setSlider(slider - 1);
+                        return setSlider (8)
+                    }} className={"sliderArrow"} alt={"slider Arrow"}/>
+                </div>
+                <div>
+                    <img src={sliderArrowRight} onClick={() => {
+                        clearTimeout(timeout);
+                        if(slider < 8) return setSlider(slider + 1);
+                        return setSlider(0);
+                    }}className={"sliderArrow"} alt={"slider Arrow"}/>
+                </div>
+            </div>
         </div>
     )
 
