@@ -1,6 +1,8 @@
 import {LeftMenu} from "./left-menu";
 import {LogIn} from "./logIn";
 import {InstallApps} from "./installApps";
+import {Contacts} from "./contacts";
+import {SocialMedia} from "./social-media";
 
 export const LeftSider = () => {
 
@@ -9,6 +11,8 @@ export const LeftSider = () => {
             <LeftMenu/>
             <LogIn/>
             <InstallApps/>
+            <Contacts/>
+            <SocialMedia/>
         </div>
     )
 }
