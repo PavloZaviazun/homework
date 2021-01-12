@@ -37,6 +37,7 @@ form {
 .search-button:hover {
     background-color: #00BC52;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 

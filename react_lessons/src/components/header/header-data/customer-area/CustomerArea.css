@@ -84,17 +84,106 @@
     position: absolute;
     right: 120px;
     box-sizing: border-box;
+    cursor: default;
 }
 
 .icons:hover .popup{
     visibility: visible;
     opacity: 1;
-    margin-top: 21px;
-    height: 200px;
-    width: 400px;
+    margin-top: 2px;
+    min-height: 100px;
+    width: 530px;
+    padding: 20px 30px 30px;
 }
 
+.icons:hover .popup-300{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 2px;
+    min-height: 100px;
+    width: 300px;
+    padding: 20px 30px 30px;
+}
 
+.number-area {
+    font-weight: bold;
+    font-size: 10pt;
+    background-color: #FF0000;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 39px;
+    left: 28px;
+}
+
+.empty-number-area {
+    width: 19px;
+    height: 19px;
+}
+
+.popup .icon {
+    width: 45px;
+    height: 40px;
+}
+
+.popup .wish {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.popup .titleName {
+    margin-bottom: 14px;
+    font-size: 16pt;
+}
+
+.popup .div-text {
+    padding-left: 25px;
+}
+
+.order {
+    background-color: #00a046;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-decoration: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+    border: 0;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.order:hover {
+    background-color: #00BC52;
+    transition: 0.3s;
+}
+
+.cart-information {
+    margin-bottom: 14px;
+    line-height: 24px;
+    font-size: 11pt;
+}
+
+.cart-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 11pt;
+}
+
+.cart-link a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.popup-300 {
+    width: 300px;
+}
 
 
 

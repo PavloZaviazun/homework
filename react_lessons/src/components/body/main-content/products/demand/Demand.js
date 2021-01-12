@@ -2,10 +2,10 @@ import {Product} from "../product";
 import {useSelector} from "react-redux";
 import chat from "../../../../../images/chat.png"
 
-export const Demand = () => {
+export const Demand = (props) => {
 
-    const {product:{product}} = useSelector(state => state);
-
+    const {product:{product}, wishlist:{wishlist}, cart:{cart}} = useSelector(state => state);
+    const {toggleWishlist, toggleCart} = props;
     const clothesProducts = product.filter(value => value.category === "women clothing");
 
     return (
@@ -18,6 +18,10 @@ export const Demand = () => {
                 return <Product
                     key={item.id}
                     product={item}
+                    toggleWishlist={toggleWishlist}
+                    toggleCart={toggleCart}
+                    isToggledWishlist={!!wishlist.find(el => el.id === item.id)}
+                    isToggledCart={!!cart.find(el => el.id === item.id)}
                 />
             })}
         </div>

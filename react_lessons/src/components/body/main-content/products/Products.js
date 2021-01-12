@@ -2,7 +2,7 @@ import {Exclusive} from "./exclusive";
 import ProductService from "../../../../services/ProductService";
 import {useSelector, useDispatch} from "react-redux";
 import {useEffect, useCallback} from "react";
-import {setProducts} from "../../../../redux/action-creators";
+import {setCart, setProducts, setWishlist} from "../../../../redux/action-creators";
 import {Demand} from "./demand";
 
 export const Products = () => {
@@ -21,13 +21,18 @@ export const Products = () => {
             dispatch(setProducts(fullItems));
     }, [])
 
+    function toggleWishlist(product) {
+        dispatch(setWishlist(product));
+    }
 
-
+    function toggleCart(product) {
+        dispatch(setCart(product));
+    }
 
     return (
         <div className={"products"}>
-            <Exclusive/>
-            <Demand/>
+            <Exclusive toggleWishlist={toggleWishlist} toggleCart={toggleCart}/>
+            <Demand toggleWishlist={toggleWishlist} toggleCart={toggleCart}/>
         </div>
     )
 }

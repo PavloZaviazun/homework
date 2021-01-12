@@ -28,57 +28,8 @@ h2 {
     margin-right: 16px;
 }
 
-.product-view {
-    height: 300px;
-    width: 200px;
-    box-sizing: border-box;
-    border-right: 1px solid #E9E9E9;
-    border-bottom: 1px solid #E9E9E9;
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
 
-.price {
-    width: 100%;
-    font-size: 24px;
-}
 
-.price span {
-    font-size: 18px;
-}
 
-.product-image {
-    max-height: 140px;
-    max-width: 140px;
-}
-
-.product-wish {
-    height: 22px;
-    position: relative;
-    bottom: 242px;
-    left: 75px;
-}
-
-.product-wish:hover {
-    cursor: pointer;
-}
-
-.div-product-image {
-    height: 140px;
-    width: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-.div-product-title {
-    height: 40px;
-    width: 100%;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
 
 

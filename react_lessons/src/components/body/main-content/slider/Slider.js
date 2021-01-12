@@ -31,7 +31,7 @@ export const Slider = () => {
             <div><img className="slide-show" src={images[slider]} alt={"slider"}/></div>
             <div className={"vse-akcii"}>
                 <div className={"div-vse-akcii"}>
-                    <Link to={""}>Все акции</Link> count
+                    <Link to={""}>Все акции</Link> {images.length}
                 </div>
             </div>
             <div className={"div-sliderArrow"}>

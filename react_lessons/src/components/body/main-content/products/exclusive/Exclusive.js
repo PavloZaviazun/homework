@@ -2,10 +2,9 @@ import star from "../../../../../images/star.png";
 import {useSelector} from "react-redux";
 import {Product} from "../product";
 
-export const Exclusive = () => {
-
-    const {product:{product}} = useSelector(state => state);
-
+export const Exclusive = (props) => {
+    const {product:{product}, wishlist:{wishlist}, cart: {cart}} = useSelector(state => state);
+    const {toggleWishlist, toggleCart} = props;
     const jewelryProducts = product.filter(value => value.category === "jewelery");
 
     return (
@@ -18,6 +17,10 @@ export const Exclusive = () => {
                 return <Product
                     key={item.id}
                     product={item}
+                    toggleWishlist={toggleWishlist}
+                    toggleCart={toggleCart}
+                    isToggledWishlist={!!wishlist.find(el => el.id === item.id)}
+                    isToggledCart={!!cart.find(el => el.id === item.id)}
                 />
             })}
         </div>
