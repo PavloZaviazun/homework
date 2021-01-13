@@ -1,13 +1,12 @@
 import {Exclusive} from "./exclusive";
 import ProductService from "../../../../services/ProductService";
-import {useSelector, useDispatch} from "react-redux";
+import {useDispatch} from "react-redux";
 import {useEffect, useCallback} from "react";
 import {setCart, setProducts, setWishlist} from "../../../../redux/action-creators";
 import {Demand} from "./demand";
 
 export const Products = () => {
 
-    const {product:{product}} = useSelector(state => state);
     const dispatch = useDispatch();
 
     let productService = new ProductService();
