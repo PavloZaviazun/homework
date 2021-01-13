@@ -9,8 +9,7 @@ export const WholeMenu = () => {
 
     return (
         <div>
-            <div className={"triangle"}></div>
-            <div className={"whole-menu"} onMouseLeave={() => dispatch(setFlag(false))}>
+            <div className={"whole-menu"} onMouseLeave={() => dispatch(setFlag(false))} id={"forShade"}>
                 <Menu/>
             </div>
         </div>

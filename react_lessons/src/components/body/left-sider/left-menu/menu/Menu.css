@@ -52,3 +52,19 @@
     padding-right: 24px;
     margin-bottom: 4px;
 }
+
+.shade-class {
+    box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.4);
+}
+
+/*.menu:after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    left: 255px; top: -17px;*/
+/*    border: 9px solid transparent;*/
+/*    border-bottom: 9px solid white;*/
+/*}*/
+
+
+
+

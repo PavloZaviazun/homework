@@ -7,12 +7,22 @@ export const ProductCatalog = () => {
     const dispatch = useDispatch();
 
     return(
-        <div className={"product-catalog"} onClick={() => dispatch(setFlag(true))}>
-            <div>
-                <img src={imageCatalog} alt={"imageCatalog"}/>
-            </div>
-            <div>
-                Каталог товаров
+        <div className={"div-product-catalog"} onMouseLeave={() => {
+            let variable = document.getElementsByClassName("menu")[0];
+            variable.classList.remove("shade-class");
+            dispatch(setFlag(false));
+        }}>
+            <div className={"product-catalog"} onClick={() => {
+                dispatch(setFlag(true))
+                let variable = document.getElementsByClassName("menu")[0];
+                variable.classList.add("shade-class");
+            }} >
+                <div>
+                    <img src={imageCatalog} alt={"imageCatalog"}/>
+                </div>
+                <div>
+                    Каталог товаров
+                </div>
             </div>
         </div>
     )

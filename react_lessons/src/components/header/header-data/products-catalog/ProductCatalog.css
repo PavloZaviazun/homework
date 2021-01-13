@@ -8,7 +8,8 @@
     box-sizing: border-box;
     height: 40px;
     min-width: 188px;
-    margin: 0 25px;
+    margin: 0 25px 10px 25px;
+
 }
 
 .product-catalog img {
@@ -19,7 +20,12 @@
 .product-catalog:hover {
     background-color: #2A3B4C;
     cursor: pointer;
-
 }
+
+.div-product-catalog {
+    height: 100%;
+}
+
+
 
 

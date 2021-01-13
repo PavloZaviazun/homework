@@ -1,6 +1,7 @@
 .slider {
     display: flex;
     flex-wrap: wrap;
+    z-index: -1;
 }
 
 .slide-show {

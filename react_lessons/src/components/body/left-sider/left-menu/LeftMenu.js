@@ -10,7 +10,7 @@ export const LeftMenu = () => {
 
     return (
         <div className={"left-menu"}>
-            <div onMouseEnter={() => dispatch(setFlag(true))}><Menu/></div>
+            <div onMouseOver={() => dispatch(setFlag(true))}><Menu/></div>
             {flag && <div><WholeMenu/></div>}
         </div>
     )
