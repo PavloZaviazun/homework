@@ -8,8 +8,8 @@ export const WholeMenu = () => {
     const dispatch = useDispatch();
 
     return (
-        <div>
-            <div className={"whole-menu"} onMouseLeave={() => dispatch(setFlag(false))} id={"forShade"}>
+        <div className={"menu-shade"}>
+            <div className={"whole-menu"} onMouseLeave={() => dispatch(setFlag(false))}>
                 <Menu/>
             </div>
         </div>
