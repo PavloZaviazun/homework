@@ -1,0 +1,54 @@
+.menu {
+    color: #3e77aa;
+    font-size: 14px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    height: 575px;
+    position: relative;
+    bottom: 8px;
+    width: 300px;
+}
+
+.menu:hover {
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.menu li {
+    height: 31px;
+}
+
+.menu div{
+    padding: 5px 0 5px 5px;
+}
+
+.menu a {
+    display: flex;
+    justify-content: space-between;
+    color: #3e77aa;
+}
+
+.menu a:hover {
+    color: red;
+    background-color: #FCFCEE;
+    transition: 0.5s;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu-mage {
+    margin: 0 12px 0 12px;
+}
+
+.arrow-right {
+    height: 9px;
+    margin-right: 14px;
+}
+
+.christmas-tree {
+    height: 19px;
+    padding-right: 24px;
+    margin-bottom: 4px;
+}
