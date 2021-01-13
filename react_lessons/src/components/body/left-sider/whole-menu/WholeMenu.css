@@ -1,0 +1,27 @@
+.whole-menu {
+    box-sizing: border-box;
+    position: absolute;
+    top: 114px;
+    background-color: white;
+    width: 300px;
+    margin-top: 10px;
+    z-index: 99;
+    height: 583px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 3px;
+}
+
+.whole-menu:hover {
+    box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.4);
+}
+
+.whole-menu:after {
+    content: '';
+    position: absolute;
+    left: 255px; top: -17px;
+    border: 9px solid transparent;
+    border-bottom: 9px solid white;
+}
+
+
