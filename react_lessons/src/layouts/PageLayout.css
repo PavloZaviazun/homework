@@ -1,0 +1,20 @@
+.page-layout {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+.footer {
+    width: 100%;
+    background-color: coral;
+    height: 50px;
+}
+
+.header {
+    width: 100%;
+    background-color: lightgrey;
+    height: 50px;
+}
+
