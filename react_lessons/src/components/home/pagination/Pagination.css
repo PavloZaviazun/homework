@@ -1,0 +1,22 @@
+.pagination {
+    padding: 25px;
+}
+
+.pagination span {
+    margin: 0 10px;
+}
+
+.pagination button {
+    cursor: pointer;
+    border: 0;
+    background-color: cadetblue;
+    border-radius: 4px;
+    height: 30px;
+    width: 40px;
+    margin: 5px;
+    font-weight: bolder;
+}
+
+.pagination button:hover {
+    background-color: lightskyblue;
+}

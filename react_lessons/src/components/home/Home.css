@@ -11,3 +11,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.loading {
+    align-self: center;
+    font-size: 14pt;
+    font-weight: bold;
+}
