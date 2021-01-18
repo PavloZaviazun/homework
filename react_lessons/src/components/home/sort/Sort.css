@@ -9,6 +9,7 @@
 
 .genre-name {
     padding: 7px 10px;
+    cursor: pointer;
 }
 
 .genre-name:hover {

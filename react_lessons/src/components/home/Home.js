@@ -18,7 +18,6 @@ export const Home = () => {
         try {
             fetchMovies(1);
             genres.length === 0 && fetchGenres();
-            fetchSort();
         } catch (e) {
             console.error(e);
         }
@@ -37,16 +36,9 @@ export const Home = () => {
         dispatch(setGenres(genres));
     }
 
-    const fetchSort = async () => {
-        const data = await movieService.getMovieByGenre().then(el => {
-            console.log(el);
-        })
-    }
-
 
     return (
         <div>
-
             {isLoaded ? <div className={"main"}><Sort/>
                 <div className={"home"}>
                     {movieList.map(movie => {
@@ -54,7 +46,7 @@ export const Home = () => {
                             key={movie.id}
                             movie={movie}
                         />
-                    })} <Pagination pages={pages} fetchMovies={fetchMovies}/> </div> </div> : <div className={"loading"}>...Loading</div> }
+                    })} <Pagination pages={pages} fetchMovies={fetchMovies}/> </div> </div> : <div className={"loading"}><div>...Loading</div></div> }
         </div>
     )
 }

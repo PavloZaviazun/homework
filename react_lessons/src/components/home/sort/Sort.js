@@ -1,5 +1,4 @@
-import {useSelector} from "react-redux";
-import {useDispatch} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import {setSortList} from "../../../redux/action-creator";
 
 export const Sort = () => {
@@ -11,10 +10,12 @@ export const Sort = () => {
         dispatch(setSortList(genreId));
     }
 
+
+
     return (
         <div className={"sort"}>
             {genres.map(el => {
-                return <div className={"genre-name"} onClick={() => toSortedList(el.id)}>
+                return <div className={"genre-name"} onClick={() => toSortedList(el.id)} key={el.id}>
                         {el.name}
                     </div>
 
