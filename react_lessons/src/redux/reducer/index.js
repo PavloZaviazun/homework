@@ -4,11 +4,13 @@ import {genres} from "./genres";
 import {searchLoad} from "./searchLoad";
 import {searchPagination} from "./searchPagination";
 import {searchText} from "./searchText";
+import {sortList} from "./sortList";
 
 export const reducers = combineReducers({
     search,
     genres,
     searchLoad,
     searchPagination,
-    searchText
+    searchText,
+    sortList
 })
