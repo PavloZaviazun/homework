@@ -2,17 +2,21 @@ import React, {useEffect, useState} from "react";
 import {movieService} from "../../services/MovieService";
 import {MovieItem} from "../movie-item";
 import {Pagination} from "./pagination";
+import {useDispatch, useSelector} from "react-redux";
+import {setGenres} from "../../redux/action-creator";
 
 export const Home = () => {
     const [movieList, setMovieList] = useState([]);
-    const [genreList, setGenreList] = useState([]);
     const [isLoaded, setIsLoaded] = useState(null);
-    const [pages, setPages] = useState([])
+    const [pages, setPages] = useState([]);
+
+    const dispatch = useDispatch();
+    const {genres:{genres}} = useSelector(el => el);
 
     useEffect(() => {
         try {
             fetchMovies(1);
-            genreList.length === 0 && fetchGenres();
+            genres.length === 0 && fetchGenres();
         } catch (e) {
             console.error(e);
         }
@@ -28,7 +32,7 @@ export const Home = () => {
 
     const fetchGenres = async () => {
         const {genres} = await movieService.getGenres();
-        setGenreList(genres)
+        dispatch(setGenres(genres));
     }
 
     return (
@@ -39,7 +43,6 @@ export const Home = () => {
                         return <MovieItem
                             key={movie.id}
                             movie={movie}
-                            genreList={genreList}
                         />
                     })} <Pagination pages={pages} fetchMovies={fetchMovies}/> </div> : <div className={"loading"}>...Loading</div> }
         </div>

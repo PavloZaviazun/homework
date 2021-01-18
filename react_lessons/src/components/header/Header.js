@@ -1,21 +1,33 @@
 import {movieService} from "../../services/MovieService";
-import {PageLayout} from "../../layouts";
+import {Link} from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux";
+import {setSearch, setSearchLoad, setSearchPagination, setSearchText} from "../../redux/action-creator";
 
 export const Header = () => {
 
-    let text = "";
-    const her = ["her"];
+    const dispatch = useDispatch();
 
-    const fetchSearch = async (text) => {
-        const data = await movieService.searchMovie(text).then(value => {
-            console.log(value);
-        });
-        <PageLayout children={her}/>
+    const {searchText:{searchText}} = useSelector(el => el);
+    let text = null;
+
+    const fetchSearch = async (searchText, page) => {
+        const data = await movieService.searchMovie(searchText, page);
+        const array = [data.page, data.total_pages];
+        dispatch(setSearch(data.results));
+        dispatch(setSearchLoad(true));
+        dispatch(setSearchPagination(array));
     }
 
     const doSearch = (event) => {
         event.preventDefault();
-        text.length > 0 && fetchSearch(text);
+        if (text !== null) {
+            fetchSearch(text, 1);
+        }
+        else {
+            fetchSearch(searchText, 1);
+        }
+        text != null && dispatch(setSearchText(text));
+        dispatch(setSearchLoad(false));
     }
 
     const findValues = (event) => {
@@ -24,11 +36,15 @@ export const Header = () => {
 
     return (
         <header className={"header"}>
-            <div className={"logo"}>Movies</div>
+            <div className={"logo"}>
+                <Link to={"/"}>
+                <img alt={"logo"} src={"https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"}/>
+                </Link>
+                </div>
             <div className={"search"}>
                 <form>
-                    <input onInput={findValues}/>
-                    <button onClick={doSearch}>Search</button>
+                    <input onInput={findValues} placeholder={"Search..."}/>
+                    <button onClick={doSearch} ><Link to="/search">Search</Link></button>
                 </form>
             </div>
         </header>

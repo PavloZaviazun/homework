@@ -10,7 +10,7 @@ class MovieService {
     }
 
     async getMovieById(id) {
-        return await fetch(`${this.url4}/movie/${id}`, {headers: {
+        return await fetch(`${this.url3}/movie/${id}`, {headers: {
                 Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTlhZGNiOGUxYTc3MWJlN2Y5MTExMDJkMjk2MWE3ZiIsInN1YiI6IjYwMDNmNGI3Yzk5ODI2MDAzZWE1MzBmYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VpC5f3PoKDbRmijmUTxR1bXwU_GX69ZYKQVVO6wRCoc'
             }}).then(value => value.json())
     }
@@ -21,8 +21,9 @@ class MovieService {
             }}).then(value => value.json())
     }
 
-    async searchMovie(words) {
-        return await fetch(`${this.url3}search/movie?&query=${words}`, {headers: {
+    async searchMovie(words, page) {
+        if(words === "") return {page: 1, results : [], total_pages: 1};
+        else return await fetch(`${this.url3}search/movie?&query=${words}&page=${page}`, {headers: {
                 Authorization : 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTlhZGNiOGUxYTc3MWJlN2Y5MTExMDJkMjk2MWE3ZiIsInN1YiI6IjYwMDNmNGI3Yzk5ODI2MDAzZWE1MzBmYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VpC5f3PoKDbRmijmUTxR1bXwU_GX69ZYKQVVO6wRCoc'
             }}).then(value => value.json())
     }

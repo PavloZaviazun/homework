@@ -12,11 +12,11 @@ export const Pagination = ({pages, fetchMovies}) => {
 
     return (
         <div className={"pagination"}>
-                <button disabled={pages[0] === 1} onClick={() => fetchMovies(1)}>1</button>
-                <button disabled={pages[0] === 1} onClick={() => toPrev(pages[0])}>{prev}</button>
-                <span>{pages[0]}</span>
-                <button disabled={pages[0] === pages[1]} onClick={() => toNext(pages[0])}>{next}</button>
-                <button disabled={pages[0] === pages[1]} onClick={() => fetchMovies(pages[1])}>{pages[1]}</button>
+            <div><button disabled={pages[0] === 1} onClick={() => fetchMovies(1)}>1</button></div>
+            <div><button disabled={pages[0] === 1} onClick={() => toPrev(pages[0])}>{prev}</button></div>
+            <div><span>{pages[0]}</span></div>
+            <div><button disabled={pages[0] === pages[1]} onClick={() => toNext(pages[0])}>{next}</button></div>
+            <div><button disabled={pages[0] === pages[1]} onClick={() => fetchMovies(pages[1])}>{pages[1]}</button></div>
         </div>
     )
 

@@ -1,0 +1,15 @@
+.movie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-movie {
+    font-size: 16pt;
+}
+
+.title-movie {
+    display: flex;
+    justify-content: center;
+}
+

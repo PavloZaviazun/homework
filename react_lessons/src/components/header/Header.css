@@ -1,4 +1,35 @@
-header {
-    display: flex;
-    align-items: center;
+.logo {
+    width: 154px;
 }
+
+header input {
+    height: 17px;
+    border: 0;
+    font-size: 14pt;
+    border-radius: 2px;
+    margin: 10px;
+    padding: 10px;
+}
+
+header button {
+    border: 0;
+    border-radius: 2px;
+    font-size: 14pt;
+    padding: 6px;
+    height: 37px;
+}
+
+header button:hover {
+    background-color: white;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
