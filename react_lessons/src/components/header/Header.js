@@ -1,11 +1,12 @@
 import {movieService} from "../../services/MovieService";
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import {setSearch, setSearchLoad, setSearchPagination, setSearchText} from "../../redux/action-creator";
 
 export const Header = () => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const {searchText:{searchText}} = useSelector(el => el);
     let text = null;
@@ -19,6 +20,7 @@ export const Header = () => {
     }
 
     const doSearch = (event) => {
+        console.log("doSearch")
         event.preventDefault();
         if (text !== null) {
             fetchSearch(text, 1);
@@ -34,6 +36,12 @@ export const Header = () => {
         text = event.target.value
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            history.push('/search');
+        }
+    }
+
     return (
         <header className={"header"}>
             <div className={"logo"}>
@@ -42,8 +50,8 @@ export const Header = () => {
                 </Link>
                 </div>
             <div className={"search"}>
-                <form>
-                    <input onInput={findValues} placeholder={"Search..."}/>
+                <form >
+                    <input onInput={findValues} placeholder={"Search..."} onKeyDown={handleKeyDown}/>
                     <button onClick={doSearch} ><Link to="/search">Search</Link></button>
                 </form>
             </div>
