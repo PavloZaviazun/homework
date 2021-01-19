@@ -12,7 +12,8 @@ export const Home = () => {
     const [pages, setPages] = useState([]);
 
     const dispatch = useDispatch();
-    const {genres:{genres}} = useSelector(el => el);
+    const {genres:{genres}, sortList:{sortList}} = useSelector(el => el);
+
 
     useEffect(() => {
         try {
@@ -21,10 +22,10 @@ export const Home = () => {
         } catch (e) {
             console.error(e);
         }
-    }, []);
+    }, [sortList]);
 
     const fetchMovies = async (nec_page) => {
-        const data = await movieService.getMovies(nec_page);
+        const data = await movieService.getMovies(nec_page, sortList);
         const array = [data.page, data.total_pages];
         setPages(array);
         setIsLoaded(true);

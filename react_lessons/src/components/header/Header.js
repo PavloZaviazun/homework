@@ -20,7 +20,6 @@ export const Header = () => {
     }
 
     const doSearch = (event) => {
-        console.log("doSearch")
         event.preventDefault();
         if (text !== null) {
             fetchSearch(text, 1);

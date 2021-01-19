@@ -3,8 +3,10 @@ class MovieService {
     url4 = "https://api.themoviedb.org/4/";
     url3 = "https://api.themoviedb.org/3/";
 
-    async getMovies(number) {
-        return await fetch(`${this.url4}discover/movie?&page=${number}`, {headers: {
+    async getMovies(number, genresArray) {
+        let genres = "";
+        if(genresArray !== undefined && genresArray.length > 0) genres = genresArray.toString();
+        return await fetch(`${this.url4}discover/movie?&page=${number}&with_genres=${genres}`, {headers: {
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTlhZGNiOGUxYTc3MWJlN2Y5MTExMDJkMjk2MWE3ZiIsInN1YiI6IjYwMDNmNGI3Yzk5ODI2MDAzZWE1MzBmYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VpC5f3PoKDbRmijmUTxR1bXwU_GX69ZYKQVVO6wRCoc'
             }}).then(value => value.json())
     }
