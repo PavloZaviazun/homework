@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {UsersService} from '../../services/users.service';
-import {HttpClientModule} from '@angular/common/http';
-import {log} from 'util';
 import {IUser} from '../../interfaces/user.Interface';
 import {IPost} from '../../interfaces/post.Interface';
 
@@ -22,6 +20,5 @@ export class UsersComponent implements OnInit {
   getBubblePosts(posts): void {
     this.posts = posts;
   }
-
 
 }

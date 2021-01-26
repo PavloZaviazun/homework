@@ -1,7 +1,5 @@
 import {Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
 import {IUser} from '../../interfaces/user.Interface';
-import {PostsService} from '../../services/posts.service';
-import {IPost} from '../../interfaces/post.Interface';
 
 @Component({
   selector: 'app-user',
@@ -13,13 +11,8 @@ export class UserComponent implements OnInit {
   user: IUser;
   @Output()
   bubblePosts = new EventEmitter();
-  constructor(private postsService: PostsService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-  getPostsOfUser(id): void {
-    this.postsService.getPosts(id).subscribe(posts => this.bubblePosts.emit(posts));
-  }
-
-
 }
