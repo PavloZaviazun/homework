@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {cars} from '../../bd/dataBase';
-import {ICars} from '../../interfaces/cars.Interface';
-import {log} from 'util';
+import {cars} from '../bd/dataBase';
+import {ICars} from '../interfaces/cars.Interface';
 
 @Component({
   selector: 'app-car-info',
