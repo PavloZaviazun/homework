@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UsersService} from '../../services/users.service';
-import {IUser} from '../../interfaces/user.Interface';
-import {IPost} from '../../interfaces/post.Interface';
+import {UsersService} from '../services/users.service';
+import {IUser} from '../interfaces/user.Interface';
+import {IPost} from '../interfaces/post.Interface';
 
 @Component({
   selector: 'app-users',

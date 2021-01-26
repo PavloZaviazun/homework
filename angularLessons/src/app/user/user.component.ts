@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
-import {IUser} from '../../interfaces/user.Interface';
+import {IUser} from '../interfaces/user.Interface';
+import {IPost} from '../interfaces/post.Interface';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +11,7 @@ export class UserComponent implements OnInit {
   @Input()
   user: IUser;
   @Output()
-  bubblePosts = new EventEmitter();
+  bubblePosts = new EventEmitter<IPost>();
   constructor() { }
 
   ngOnInit(): void {
