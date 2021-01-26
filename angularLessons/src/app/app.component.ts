@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {PostService} from '../service/post.service';
-import {IPost} from '../interfaces/post.Interface';
+import {PostService} from './service/post.service';
+import {IPost} from './interfaces/post.Interface';
 
 @Component({
   selector: 'app-root',
