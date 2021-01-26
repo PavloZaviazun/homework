@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {cars} from '../../bd/dataBase';
 import {ICars} from '../../interfaces/cars.Interface';
+import {log} from 'util';
 
 @Component({
   selector: 'app-car-info',
@@ -10,14 +11,18 @@ import {ICars} from '../../interfaces/cars.Interface';
 })
 export class CarInfoComponent implements OnInit {
   cars = cars;
-  defCar: number;
+  car: ICars;
   constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe(value => this.defCar = value.id);
-    console.log(this.defCar);
   }
 
   ngOnInit(): void {
-    // const her = cars.filter(value => value.id === this.defCar);
+    this.activatedRoute.params.subscribe(search => {
+      this.cars.filter(value => {
+        if (value.id === +search.id) {
+          this.car = value;
+        }
+      });
+    });
   }
 
 }
