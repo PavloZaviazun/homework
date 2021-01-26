@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {cars} from '../../db/dataBase';
+import {cars} from '../db/dataBase';
 
 @Component({
   selector: 'app-cars',
