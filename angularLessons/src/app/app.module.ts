@@ -14,8 +14,12 @@ import {UsersResolveService} from './services/users-resolve.service';
 import {PostsResolveService} from './services/posts-resolve.service';
 
 const routes: Routes = [
-  {path: 'users', component: UsersComponent, resolve: {usersData: UsersResolveService}},
-  {path: 'posts', component: PostsComponent, resolve: {postsData: PostsResolveService}}
+  {path: 'users', component: UsersComponent, resolve: {usersData: UsersResolveService}, children: [{
+    path: ':id', component: FullUserComponent
+    }]},
+  {path: 'posts', component: PostsComponent, resolve: {postsData: PostsResolveService}, children: [{
+    path: ':id', component: FullPostComponent
+    }]}
 ];
 
 @NgModule({
