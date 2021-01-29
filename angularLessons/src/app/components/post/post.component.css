@@ -1,0 +1,21 @@
+.post {
+  display: flex;
+  padding: 5px;
+  border-right: 1px dashed lightblue;
+}
+.post .post-title {
+  width: 87%;
+}
+
+.post button {
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  height: 25px;
+  width: 70px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.post button:hover {
+  background-color: gainsboro;
+}

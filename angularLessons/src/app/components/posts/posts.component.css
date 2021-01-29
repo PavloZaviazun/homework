@@ -1,0 +1,8 @@
+.main-posts {
+  border-bottom: 1px dashed lightblue;
+  display: flex;
+}
+
+.list {
+  min-width: 42%;
+}

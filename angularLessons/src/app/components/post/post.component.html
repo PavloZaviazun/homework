@@ -1,3 +1,4 @@
-<div>
-  post ID: {{post.id}} -- <button (click)="showPost()">Show info</button>
+<div [className]="['post']">
+  <div [className]="['post-title']">{{post.title}}</div>
+  <div><button (click)="showPost()">Show info</button></div>
 </div>

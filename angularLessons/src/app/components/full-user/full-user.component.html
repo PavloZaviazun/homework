@@ -1,3 +1,5 @@
-<div>
-  {{user.name}}
+<div [className]="['full-user']">
+  <span>User:</span> {{user.id}} - {{user.name}} - {{user.website}} - {{user.email}} - {{user.username}} <br>
+  <span>Address:</span> {{user.address.city}} - {{user.address.street}} - {{user.address.suite}} - {{user.address.zipcode}} <br>
+  <span>Company:</span> {{user.company.name}} - {{user.company.bs}} - {{user.company.catchPhrase}}
 </div>

@@ -1,3 +1,8 @@
 .main-users {
-  border: 1px solid red;
+  border-bottom: 1px dashed lightblue;
+  display: flex;
+}
+
+.list {
+  width: 30%;
 }
