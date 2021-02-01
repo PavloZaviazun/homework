@@ -9,9 +9,9 @@ import {IPost} from '../../interfaces/post.';
 })
 export class FullPostComponent implements OnInit {
   post: IPost;
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe(value => {
-      this.post = history.state;
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    this.activatedRoute.params.subscribe(() => {
+      this.post = this.router.getCurrentNavigation().extras.state as IPost;
     });
   }
 
