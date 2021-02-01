@@ -1,0 +1,57 @@
+.errorClass {
+  color: red;
+}
+
+.carForm {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button-div {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messages div {
+  height: 20%;
+}
+
+input {
+  margin: 0 3px 3px 3px;
+  width: 100px;
+}
+
+select {
+   margin: 0 3px 3px 3px;
+  width: 108px;
+}
+
+.labels div {
+  margin: 0 3px 3px 3px;
+}
+
+form {
+  padding: 5px;
+  background-color: ghostwhite;
+}
+
+.asterisk {
+  width: 15px;
+}
+
+.error-list {
+  display: flex;
+  flex-direction: row;
+}
