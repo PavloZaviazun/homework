@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {IPost} from '../../interfaces/post.interface';
 
 @Component({
@@ -9,9 +9,9 @@ import {IPost} from '../../interfaces/post.interface';
 })
 export class FullPostComponent implements OnInit {
   post: IPost;
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.params.subscribe(value => {
-      this.post = history.state;
+      this.post = this.router.getCurrentNavigation().extras.state as IPost;
     });
   }
 

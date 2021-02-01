@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {IUser} from '../../interfaces/user.interface';
 
 @Component({
@@ -9,9 +9,9 @@ import {IUser} from '../../interfaces/user.interface';
 })
 export class FullUserComponent implements OnInit {
   user: IUser;
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.params.subscribe(value => {
-      this.user = history.state;
+      this.user = this.router.getCurrentNavigation().extras.state as IUser;
     });
   }
 
