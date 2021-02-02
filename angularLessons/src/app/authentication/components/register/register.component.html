@@ -1,0 +1,28 @@
+<div [className]="['main-form']">
+  <div [className]="'form'">
+    <form [formGroup]="formRegister" >
+      <div [className]="'form-row'">
+        <div>Username</div>
+        <div>
+          <input [formControl]="loginRegister" name="login">
+        </div>
+      </div>
+      <div [className]="'form-row'">
+        <div>
+          Password
+        </div>
+        <div>
+          <input [formControl]="passwordRegister" name="password">
+        </div>
+      </div>
+      <div [className]="'form-row'">
+        <div>
+          <button (click)="sendData()">Login</button>
+        </div>
+        <div [className]="'errors'" *ngIf="formRegister.invalid">
+          Login and password can't be empty
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
