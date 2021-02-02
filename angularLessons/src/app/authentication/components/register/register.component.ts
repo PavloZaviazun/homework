@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AdduserService} from '../../../services/adduser.service';
 
@@ -8,7 +8,6 @@ import {AdduserService} from '../../../services/adduser.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
   constructor(private adduserService: AdduserService) { }
   loginRegister = new FormControl('', Validators.required);
   passwordRegister = new FormControl('', Validators.required);

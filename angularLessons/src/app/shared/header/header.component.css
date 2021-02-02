@@ -6,6 +6,10 @@ header {
   height: 50px;
 }
 
+.div-menu {
+  display: flex;
+}
+
 header div {
   margin: 7px;
 }

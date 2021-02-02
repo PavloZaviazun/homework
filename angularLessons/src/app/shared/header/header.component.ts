@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {IUserdb} from '../../interfaces/userdb.interface';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  user: IUserdb;
+  constructor(private router: Router) {
+    this.user = this.router.getCurrentNavigation().extras.state as IUserdb;
+  }
 
   ngOnInit(): void {
   }

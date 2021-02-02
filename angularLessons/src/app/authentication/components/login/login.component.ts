@@ -27,7 +27,9 @@ export class LoginComponent implements OnInit {
     this.userName = user?.login;
     this.loginFlag = !!user;
     if (user) {
-      this.router.navigate(['main']);
+      this.router.navigate(['main'], {
+        state: user
+      });
     }
   }
 }
