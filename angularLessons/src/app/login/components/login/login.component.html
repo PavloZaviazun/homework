@@ -1,2 +1,29 @@
 <app-header></app-header>
-<p>login works!</p>
+<div [className]="['main-form']">
+  <div [className]="'form'">
+    <form [formGroup]="formLogin" >
+      <div [className]="'form-row'">
+        <div>Username</div>
+        <div>
+          <input [formControl]="loginLogin" name="login">
+        </div>
+      </div>
+      <div [className]="'form-row'">
+        <div>
+          Password
+        </div>
+        <div>
+          <input [formControl]="passwordLogin" name="password">
+        </div>
+      </div>
+      <div [className]="'form-row'">
+      <div>
+      <button (click)="compareData()">Login</button>
+      </div>
+        <div [className]="'errors'" *ngIf="!loginFlag">
+          Login or password is incorrect
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

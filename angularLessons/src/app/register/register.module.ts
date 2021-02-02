@@ -3,17 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './components/register/register.component';
-import {LoginModule} from '../login/login.module';
+import {HeaderComponent} from '../shared/header/header.component';
+import {SharedModule} from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    RegisterComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
     RegisterRoutingModule,
-    LoginModule
+    SharedModule,
   ]
 })
 export class RegisterModule { }
