@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { CarsComponent } from './components/main/cars/cars.component';
 import { CreationComponent } from './components/main/creation/creation.component';
+import {AppRoutingModule} from './app-routing.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { CreationComponent } from './components/main/creation/creation.component
     CreationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
