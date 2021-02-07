@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {CarsService} from '../../../services';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-creation',
@@ -8,7 +10,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class CreationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private carsService: CarsService, private router: Router, private activatedRoute: ActivatedRoute) { }
   brand = new FormControl('');
   model = new FormControl('');
   year = new FormControl('');
@@ -19,5 +21,9 @@ export class CreationComponent implements OnInit {
   });
   ngOnInit(): void {
   }
-
+  createNew(): void {
+    this.carsService.addCar({id: 0, brand: this.brand.value, model: this.model.value, year: +this.year.value}).subscribe(value => {
+      this.router.navigate(['cars']);
+    });
+  }
 }

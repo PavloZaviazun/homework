@@ -1,7 +1,8 @@
-<form [formGroup]="carForm" ]>
+<div><form [formGroup]="carForm">
   <div><label>Brand: <input [name]="'brand'" [formControl]="brand"></label></div>
   <div><label>Model: <input [name]="'model'" [formControl]="model"></label></div>
   <div><label>Year: <input [name]="'year'" [formControl]="year"></label></div>
-  <div><button></button></div>
+  <div><button (click)="createNew()" [type]="'button'">Submit</button></div>
 </form>
+</div>
 

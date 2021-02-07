@@ -7,18 +7,22 @@ import { CarsComponent } from './components/main/cars/cars.component';
 import { CreationComponent } from './components/main/creation/creation.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { CarComponent } from './components/main/car/car.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     CarsComponent,
-    CreationComponent
+    CreationComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

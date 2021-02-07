@@ -8,12 +8,15 @@ import {URL} from '../config';
   providedIn: 'root'
 })
 export class CarsService {
-
   constructor(private httpClient: HttpClient) { }
+  id: number;
   getAllCars(): Observable<ICar[]> {
     return this.httpClient.get<ICar[]>(URL.cars);
   }
-  // addCar(): Observable<ICar> {
-  //   return this.httpClient.post<ICar>(URL.cars);
-  // }
+  addCar(car: ICar): Observable<ICar> {
+    this.getAllCars().subscribe(value => {
+      this.id = value.length + 1;
+    });
+    return this.httpClient.post<ICar>(URL.cars, {id: this.id, ...car});
+  }
 }

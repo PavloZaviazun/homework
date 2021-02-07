@@ -1,0 +1,6 @@
+{
+  "cars": [
+    {"id": 1, "brand": "Honda", "model": "Sivic", "year": 1998},
+    {"id": 2, "brand": "Toyota", "model": "Prius", "year": 2005}
+  ]
+}
