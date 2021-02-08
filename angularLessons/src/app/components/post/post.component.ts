@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChanges, DoCheck} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter, DoCheck} from '@angular/core';
 import {IPost} from '../../interfaces/post.interface';
 import {ButtonService} from '../../services/button.service';
 
