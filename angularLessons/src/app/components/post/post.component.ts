@@ -12,7 +12,7 @@ export class PostComponent implements OnInit, DoCheck {
   id: number;
   constructor(private buttonService: ButtonService) { }
   @Output()
-  bubblePost = new EventEmitter();
+  bubblePost = new EventEmitter<IPost>();
 
   ngOnInit(): void {
   }
