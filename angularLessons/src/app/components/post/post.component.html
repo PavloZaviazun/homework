@@ -1,0 +1,6 @@
+<div [className]="'post'">
+  {{post.id}} - {{post.title}}<br>
+  {{post.body}}<br>
+  <div *ngIf="id !== post.id"><button (click)="choosePost()">show info</button></div>
+  <hr>
+</div>
