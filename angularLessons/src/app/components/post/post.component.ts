@@ -7,7 +7,7 @@ import {ButtonService} from '../../services/button.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, DoCheck {
   @Input() post: IPost;
   id: number;
   constructor(private buttonService: ButtonService) { }
@@ -15,12 +15,14 @@ export class PostComponent implements OnInit {
   bubblePost = new EventEmitter<IPost>();
 
   ngOnInit(): void {
-    this.id = this.buttonService.getId().getValue();
   }
 
   choosePost(): void {
     this.bubblePost.emit(this.post);
-    this.buttonService.setId(this.post.id);
+    this.buttonService.setId(+this.post.id);
   }
 
+  ngDoCheck(): void {
+    this.id = this.buttonService.getId().getValue();
+  }
 }
