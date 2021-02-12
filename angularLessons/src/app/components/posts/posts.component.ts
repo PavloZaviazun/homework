@@ -16,7 +16,7 @@ export class PostsComponent implements OnInit {
     this.postsService.getPosts().subscribe(value => this.posts = value);
   }
 
-  getBubblePost(post): void {
+  getBubblePost(post: IPost): void {
     this.post = post;
   }
 }
