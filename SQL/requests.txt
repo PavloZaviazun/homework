@@ -140,15 +140,13 @@ SELECT COUNT(idClient) AS countClient, d.DepartmentCity  FROM client c
 
 # 10. Знайти кредити, які мають найбільшу суму для кожного клієнта окремо.
 
-SELECT
-    a.idApplication,
-    MAX(a.Sum) AS Sum,
-    a.CreditState,
-    a.Currency,
-    CONCAT(FirstName, ' ', LastName) AS fullName
-    from application a
-    JOIN client c ON a.Client_idClient = c.idClient
-    GROUP BY Client_idClient;
+SELECT * FROM application a WHERE a.Sum IN(SELECT MAX(a.Sum)
+    FROM client c
+    JOIN application a ON c.idClient = a.Client_idClient
+    GROUP BY c.idClient
+    ORDER BY c.idClient);
+
+SET sql_mode = 'ONLY_FULL_GROUP_BY';
 
 # 11. Визначити кількість заявок на крдеит для кожного клієнта.
 
@@ -280,4 +278,4 @@ SELECT AVG(Sum) AS avgSum FROM application a
 
 SELECT MAX(Sum) AS maxCredit, c.idClient, c.LastName FROM application a
     JOIN client c ON a.Client_idClient = c.idClient
-    GROUP BY c.idClient
+    GROUP BY c.idClient;
