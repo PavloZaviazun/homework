@@ -1,0 +1,283 @@
+SET SQL_MODE = '';
+
+
+CREATE SCHEMA IF NOT EXISTS `bank` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `bank` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Department`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bank`.`department` (
+  `idDepartment` INT NOT NULL,
+  `DepartmentCity` VARCHAR(45) NULL,
+  `CountOfWorkers` INT NULL,
+  PRIMARY KEY (`idDepartment`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Client`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bank`.`client` (
+  `idClient` INT NOT NULL,
+  `FirstName` VARCHAR(45) NULL,
+  `LastName` VARCHAR(45) NULL,
+  `Education` VARCHAR(45) NULL,
+  `Passport` VARCHAR(45) NULL,
+  `City` VARCHAR(45) NULL,
+  `Age` VARCHAR(45) NULL,
+  `Department_idDepartment` INT NOT NULL,
+  PRIMARY KEY (`idClient`),
+  INDEX `fk_Client_Department_idx` (`Department_idDepartment` ASC),
+  CONSTRAINT `fk_Client_Department`
+    FOREIGN KEY (`Department_idDepartment`)
+    REFERENCES `bank`.`department` (`idDepartment`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Application`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bank`.`application` (
+  `idApplication` INT NOT NULL,
+  `Sum` INT NULL,
+  `CreditState` VARCHAR(45) NULL,
+  `Currency` VARCHAR(45) NULL,
+  `Client_idClient` INT NOT NULL,
+  PRIMARY KEY (`idApplication`),
+  INDEX `fk_Application_Client1_idx` (`Client_idClient` ASC),
+  CONSTRAINT `fk_Application_Client1`
+    FOREIGN KEY (`Client_idClient`)
+    REFERENCES `bank`.`client` (`idClient`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+
+
+
+INSERT INTO `bank`.`department` (`idDepartment`, `DepartmentCity`, `CountOfWorkers`) VALUES ('1', 'Kyiv', '12');
+INSERT INTO `bank`.`department` (`idDepartment`, `DepartmentCity`, `CountOfWorkers`) VALUES ('2', 'Lviv', '15');
+INSERT INTO `bank`.`department` (`idDepartment`, `DepartmentCity`, `CountOfWorkers`) VALUES ('3', 'Rivne', '8');
+INSERT INTO `bank`.`department` (`idDepartment`, `DepartmentCity`, `CountOfWorkers`) VALUES ('4', 'Kyiv', '16');
+INSERT INTO `bank`.`department` (`idDepartment`, `DepartmentCity`, `CountOfWorkers`) VALUES ('5', 'Lviv', '10');
+
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('1', 'Roman', 'Beregulak', 'high', 'KC249584', 'Lviv', '25', '2');
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('2', 'Mariya', 'Pehnyk', 'high', 'KC350156', 'Stryi', '29', '2');
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('3', 'Olena', 'Fedychkanych', 'middle', 'KC850145', 'Krasne', '19', '1');
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('4', 'Igor', 'Petriv', 'technic', 'KC853952', 'Kyiv', '21', '4');
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('5', 'Volodymyr', 'Gryniv', 'high', 'KC849153', 'Skvyra', '35', '4');
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('6', 'Oleg', 'Fedyshyn', 'high', 'KC012412', 'Lviv', '42', '5');
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('7', 'Taras', 'Sobko', 'middle', 'KC249504', 'Rivne', '20', '3');
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('8', 'Viktor', 'Spas', 'technic', 'KC823412', 'Kyiv', '22', '2');
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('9', 'Julia', 'Mokina', 'technic', 'KC908295', 'Kyiv', '21', '1');
+INSERT INTO `bank`.`client` (`idClient`, `FirstName`, `LastName`, `Education`, `Passport`, `City`, `Age`, `Department_idDepartment`) VALUES ('10', 'Oksana', 'Indusiva', 'high', 'KC723532', 'Sambir', '32', '1');
+
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('1', '4000', 'Returned', 'Dollar', '1');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('2', '5000', 'Not returned', 'Dollar', '4');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('3', '7500', 'Returned', 'Euro', '6');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('4', '3200', 'Not returned', 'Gryvnia', '2');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('5', '3700', 'Returned', 'Gryvnia', '3');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('6', '4100', 'Returned', 'Dollar', '1');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('7', '15100', 'Not returned', 'Gryvnia', '9');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('8', '25600', 'Not returned', 'Dollar', '10');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('9', '12300', 'Not returned', 'Gryvnia', '8');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('10', '9700', 'Returned', 'Dollar', '5');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('11', '9000', 'Not returned', 'Gryvnia', '7');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('12', '8100', 'Not returned', 'Dollar', '3');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('13', '4400', 'Not returned', 'Euro', '8');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('14', '2700', 'Returned', 'Dollar', '10');
+INSERT INTO `bank`.`application` (`idApplication`, `Sum`, `CreditState`, `Currency`, `Client_idClient`) VALUES ('15', '6600', 'Not returned', 'Euro', '3');
+
+# 1. +Вибрати усіх клієнтів, чиє ім'я має менше ніж 6 символів.
+SELECT * FROM client WHERE LENGTH(FirstName) < 6;
+
+# 2. +Вибрати львівські відділення банку.+
+SELECT * FROM department WHERE DepartmentCity = 'Lviv';
+
+# 3. +Вибрати клієнтів з вищою освітою та посортувати по прізвищу.
+
+SELECT * FROM client WHERE Education = 'high' ORDER BY LastName;
+
+# 4. +Виконати сортування у зворотньому порядку над таблицею Заявка і вивести 5 останніх елементів.
+
+SELECT * FROM application ORDER BY idApplication DESC LIMIT 5 OFFSET 10;
+
+# 5. +Вивести усіх клієнтів, чиє прізвище закінчується на OV чи OVA.
+
+SELECT * FROM client WHERE LastName LIKE '%ch' OR LastName LIKE '%v';
+
+# 6. +Вивести клієнтів банку, які обслуговуються київськими відділеннями.
+
+SELECT idClient, FirstName, LastName, Education, Passport, City, Age, Department_idDepartment FROM client
+    JOIN department ON client.Department_idDepartment = department.idDepartment
+    WHERE DepartmentCity = 'Kyiv';
+
+# 7. +Вивести імена клієнтів та їхні номера телефону, погрупувавши їх за іменами.
+
+SELECT FirstName, Passport FROM client GROUP BY FirstName;
+
+# 8. +Вивести дані про клієнтів, які мають кредит більше ніж на 5000 тисяч гривень
+
+SELECT c.LastName, a.CreditState, a.Sum FROM application a
+    JOIN client c ON a.Client_idClient = c.idClient
+    WHERE CreditState = 'Not returned' AND Sum > 5000;
+
+# 9. +Порахувати кількість клієнтів усіх відділень та лише львівських відділень.
+
+SELECT COUNT(idClient) AS countClients FROM client;
+
+SELECT COUNT(idClient) AS countClient, d.DepartmentCity  FROM client c
+    JOIN department d ON c.Department_idDepartment = d.idDepartment
+    GROUP BY d.DepartmentCity;
+
+SELECT COUNT(idClient) AS countClient, d.DepartmentCity  FROM client c
+    JOIN department d ON c.Department_idDepartment = d.idDepartment
+    WHERE d.DepartmentCity = 'Lviv';
+
+# 10. Знайти кредити, які мають найбільшу суму для кожного клієнта окремо.
+
+SELECT
+    a.idApplication,
+    MAX(a.Sum) AS Sum,
+    a.CreditState,
+    a.Currency,
+    CONCAT(FirstName, ' ', LastName) AS fullName
+    from application a
+    JOIN client c ON a.Client_idClient = c.idClient
+    GROUP BY Client_idClient;
+
+# 11. Визначити кількість заявок на крдеит для кожного клієнта.
+
+SELECT c.LastName, COUNT(Client_idClient) AS quantity FROM application a
+    JOIN client c ON a.Client_idClient = c.idClient
+    GROUP BY Client_idClient;
+
+# 12. Визначити найбільший та найменший кредити.
+
+SELECT MAX(Sum) AS maxCredit, MIN(Sum) AS minCredit FROM application;
+
+# 13. Порахувати кількість кредитів для клієнтів,які мають вищу освіту.
+
+SELECT c.LastName, COUNT(a.Client_idClient) AS quantity from application a
+    JOIN client c ON a.Client_idClient = c.idClient
+    WHERE c.Education = 'high'
+    GROUP BY Client_idClient;
+
+# 14. Вивести дані про клієнта, в якого середня сума кредитів найвища.
+
+SELECT c.idClient, c.LastName, AVG(a.Sum) AS avarage FROM client c
+    JOIN application a ON c.idClient = a.Client_idClient
+    GROUP BY c.idClient
+    ORDER BY avarage DESC LIMIT 1;
+
+
+# 15. Вивести відділення, яке видало в кредити найбільше грошей
+
+SELECT SUM(a.Sum) as sumCredit, d.idDepartment, d.DepartmentCity, d.CountOfWorkers from department d
+    JOIN client c ON d.idDepartment = c.Department_idDepartment
+    JOIN application a ON c.idClient = a.Client_idClient
+    GROUP BY d.idDepartment
+    ORDER BY sumCredit DESC LIMIT 1;
+
+# 16. Вивести відділення, яке видало найбільший кредит
+
+SELECT d.idDepartment, d.CountOfWorkers, d.DepartmentCity AS maxCredit FROM department d
+    JOIN client c ON d.idDepartment = c.Department_idDepartment
+    JOIN application a ON c.idClient = a.Client_idClient
+    GROUP BY d.idDepartment
+    ORDER BY MAX(a.Sum) DESC LIMIT 1;
+
+# 17. Усім клієнтам, які мають вищу освіту, встановити усі їхні кредити у розмірі 6000 грн.
+
+UPDATE application a
+    JOIN client c ON a.Client_idClient = c.idClient
+    SET a.Sum = 6000 WHERE c.Education = 'high';
+
+# 18. Усіх клієнтів київських відділень пересилити до Києва.
+
+UPDATE client c
+    JOIN department d ON c.Department_idDepartment = d.idDepartment
+    SET c.City = 'Kyiv' WHERE d.DepartmentCity = 'Kyiv';
+
+# 19. Видалити усі кредити, які є повернені.
+
+DELETE FROM application
+    WHERE CreditState = 'Returned';
+
+# 20. Видалити кредити клієнтів, в яких друга літера прізвища є голосною.
+
+DELETE a
+    FROM application a
+    JOIN client c ON a.Client_idClient = c.idClient
+    WHERE c.LastName REGEXP '\\b\\w[eyuioa]\\w+';
+
+# Знайти львівські відділення, які видали кредитів на загальну суму більше ніж 8000
+
+SELECT d.idDepartment, d.DepartmentCity, d.CountOfWorkers FROM department d
+    JOIN client c ON d.idDepartment = c.Department_idDepartment
+    JOIN application a ON c.idClient = a.Client_idClient
+    WHERE d.DepartmentCity = 'Lviv'
+    GROUP BY d.idDepartment
+    HAVING SUM(a.Sum) > 8000;
+
+# Знайти клієнтів, які повністю погасили кредити на суму більше ніж 5000
+
+SELECT * FROM client c
+    JOIN application a ON c.idClient = a.Client_idClient
+    WHERE a.CreditState='Returned' AND a.Sum > 5000;
+
+/* Знайти максимальний неповернений кредит.*/
+
+SELECT idApplication, Currency ,CreditState, MAX(Sum) AS Sum FROM application
+    WHERE CreditState = 'Not returned';
+
+/*Знайти клієнта, сума кредиту якого найменша*/
+
+SELECT c.idClient, c.Passport, c.LastName
+    FROM client c JOIN application a ON c.idClient = a.Client_idClient
+    GROUP BY c.idClient
+    ORDER BY SUM(a.Sum) LIMIT 1;
+
+/*Знайти кредити, сума яких більша за середнє значення усіх кредитів*/
+
+SELECT * FROM application WHERE Sum > (SELECT AVG(Sum) FROM application);
+
+# classwork 15.02.2021
+
+SELECT a.Sum, c.idClient, c.FirstName, c.LastName, c.Education, c.Passport FROM client c
+    JOIN application a ON c.idClient = a.Client_idClient
+    JOIN department d ON d.idDepartment = c.Department_idDepartment
+    WHERE a.Currency = 'Dollar' AND d.DepartmentCity = 'Lviv'
+    GROUP BY c.idClient
+    ORDER BY MAX(SUM) DESC LIMIT 1;
+
+# найти клиента у которого больше всего кредитов
+
+SELECT c.City FROM client c
+    JOIN application a ON c.idClient = a.Client_idClient
+    GROUP BY c.idClient
+    ORDER BY COUNT(a.Sum) DESC LIMIT 1;
+
+# найти клиентов, которые находятся в том же городе где и клиент с самым большим количеством кредитов
+
+SELECT * FROM client WHERE City = (SELECT c.City FROM client c
+    JOIN application a ON c.idClient = a.Client_idClient
+    GROUP BY c.idClient
+    ORDER BY COUNT(a.Sum) DESC LIMIT 1);
+
+# найти среднее арифметическое долоровых кредитов взятых во Львовских отделениях
+
+SELECT AVG(Sum) AS avgSum FROM application a
+    JOIN client c ON a.Client_idClient = c.idClient
+    JOIN department d ON d.idDepartment = c.Department_idDepartment
+    WHERE d.DepartmentCity = 'Lviv' AND a.Currency = 'Dollar';
+
+# найти максимальный кредит для каждого клиента
+
+SELECT MAX(Sum) AS maxCredit, c.idClient, c.LastName FROM application a
+    JOIN client c ON a.Client_idClient = c.idClient
+    GROUP BY c.idClient
