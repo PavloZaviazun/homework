@@ -9,6 +9,7 @@ public class Solution {
         };
         for(Playable item : playables) {
             item.play();
+            System.out.println(item);
         }
     }
 }
