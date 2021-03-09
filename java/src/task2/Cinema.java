@@ -49,15 +49,7 @@ public class Cinema {
     public void removeSeance(String day, Seance seance) {
         for(Days flow : Days.values()) {
             if(flow.toString().equals(day.toUpperCase())) {
-                for(Map.Entry<Days, Schedule> pair : this.getMapSchedule().entrySet()) {
-                    if(pair.getKey().equals(flow)) {
-                        Iterator<Seance> iterator = pair.getValue().getSeances().iterator();
-                        while (iterator.hasNext()) {
-                            Seance seanceExist = iterator.next();
-                            if(seanceExist.equals(seance)) iterator.remove();
-                        }
-                    }
-                }
+                this.mapSchedule.get(flow).removeSeance(seance);
             }
         }
     }

@@ -55,12 +55,12 @@ public class Main {
                 new Time(0, 23)
         );
 
-/*        // Check methods
-        cinema.addSeances("Thursday", seance1);
-        cinema.addSeances("thursday", seance1, seance4);
-        cinema.removeSeance("THURSDAY", seance2);
-        cinema.removeMovie(movie1);
-        //*/
+        // Check methods
+//        cinema.addSeances("Thursday", seance1);
+//        cinema.addSeances("thursday", seance1, seance4);
+//        cinema.removeSeance("THURSDAY", seance2);
+//        cinema.removeMovie(movie1);
+        //
 
         System.out.println(cinema);
         for(Map.Entry<Days, Schedule> pair : cinema.getMapSchedule().entrySet()) {
