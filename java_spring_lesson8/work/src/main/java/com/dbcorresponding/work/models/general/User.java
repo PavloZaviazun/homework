@@ -1,6 +1,5 @@
-package com.dbcorresponding.work.models;
+package com.dbcorresponding.work.models.general;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;

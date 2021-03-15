@@ -1,11 +1,10 @@
-package com.dbcorresponding.work.controllers;
+package com.dbcorresponding.work.controllers.general;
 
-import com.dbcorresponding.work.dao.UserDAO;
-import com.dbcorresponding.work.models.Car;
-import com.dbcorresponding.work.models.Product;
-import com.dbcorresponding.work.models.User;
+import com.dbcorresponding.work.dao.general.UserDAO;
+import com.dbcorresponding.work.models.general.Car;
+import com.dbcorresponding.work.models.general.Product;
+import com.dbcorresponding.work.models.general.User;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

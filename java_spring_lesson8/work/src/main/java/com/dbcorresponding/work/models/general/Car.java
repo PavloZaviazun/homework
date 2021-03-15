@@ -1,4 +1,4 @@
-package com.dbcorresponding.work.models;
+package com.dbcorresponding.work.models.general;
 
 import lombok.*;
 
