@@ -19,7 +19,7 @@ public class Translation {
     private String language;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "translations")
-    List <Word> words = new ArrayList<Word>();
+    List <Word> words = new ArrayList<>();
 
     public Translation(String language) {
         this.language = language;

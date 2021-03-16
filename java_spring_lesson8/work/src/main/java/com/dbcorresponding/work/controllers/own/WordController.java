@@ -24,7 +24,7 @@ public class WordController {
         List<Translation> list = new ArrayList <>();
         list.add(translation1);
         list.add(translation2);
-        Word word1 = new Word("hello", list);
+        Word word1 = new Word("hello");
         wordDAO.save(word1);
     }
 

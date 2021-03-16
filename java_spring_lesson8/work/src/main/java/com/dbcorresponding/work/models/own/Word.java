@@ -24,6 +24,11 @@ public class Word {
     private Vocabulary vocabulary;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "word_translations",
+            joinColumns = @JoinColumn(name = "words_id"),
+            inverseJoinColumns = @JoinColumn(name = "translations_id")
+    )
     List<Translation> translations = new ArrayList <>();
 
     public Word(String word) {
@@ -32,6 +37,5 @@ public class Word {
 
     public Word(String word, List <Translation> translations) {
         this.word = word;
-        this.translations = translations;
     }
 }
