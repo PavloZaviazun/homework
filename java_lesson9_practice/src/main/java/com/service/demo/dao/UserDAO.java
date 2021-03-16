@@ -2,8 +2,6 @@ package com.service.demo.dao;
 
 import com.service.demo.models.User;
 import lombok.AllArgsConstructor;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -30,12 +28,17 @@ public class UserDAO {
         return entityManager.createQuery("select u from User u where u.id =:id", User.class).setParameter("id", id).getSingleResult();
     }
 
-//    public void removeById(int id) {
-//        entityManager.cre;
-//    }
+    @Transactional
+    public void removeById(int id) {
+        User user = entityManager.find(User.class, id);
+        entityManager.remove(user);
+    }
+
+    @Transactional
+    public void updateById(int id, String name, int age) {
+        User user = entityManager.find(User.class, id);
+        user.setName(name);
+        user.setAge(age);
+    }
 
 }
-
-//@EnableJpaRepositories
-//public interface UserDAO extends JpaRepository<User, Integer> {
-//}
