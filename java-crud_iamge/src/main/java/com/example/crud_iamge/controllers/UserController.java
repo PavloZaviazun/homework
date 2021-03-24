@@ -46,6 +46,7 @@ public class UserController {
     @ResponseBody
     public void updateUser(@PathVariable int id,
                             @RequestParam Form firstName
+
                             /*,
                            @RequestParam String firstName*//*,
                            @RequestParam String lastName,
