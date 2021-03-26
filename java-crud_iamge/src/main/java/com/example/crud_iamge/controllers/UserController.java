@@ -25,6 +25,7 @@ public class UserController {
                          @RequestParam String email,
                          @RequestParam String password) {
         String avatarName = "";
+
         if(avatar.getOriginalFilename().isEmpty()) {
             avatarName = "simpsons.png";
         } else {
