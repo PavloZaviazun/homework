@@ -1,58 +1,32 @@
-import {Link, withRouter} from "react-router-dom";
-import {useState, useEffect} from "react";
+import "./UserComponent.css";
+import {Link} from "react-router-dom";
 import {UserService} from "../../services";
-import "./UserComponent.css"
 
 export const UserComponent = (props) => {
-    const[user, setUser] = useState({});
-    const {firstName, lastName, age, email, password, avatar} = user;
-    const id = props.match.params.id;
+    const {user: {id, firstName, lastName}, setFlag, flag} = props;
     const userService = new UserService();
 
-    useEffect(() => {
-        userService.getUser(id).then(el => {
-            setUser(el);
+
+    const removeUser = () => {
+        userService.removeUser(id).then(el => {
+            if(el.status === 200) {
+                setFlag(!flag);
+            }
         });
-    }, [id])
+    }
 
     return(
-        <div> {user.id > 0 &&
-            <table className={"table"}>
-                <thead>
-                <tr>
-                    <th colSpan={3}>User #{user.id}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>First name</td>
-                    <td>{firstName}</td>
-                    <td rowSpan={5}><img src={userService.getAvatar(avatar)} className={"avatar"}
-                                         alt={`avatar-user${id}`}/></td>
-                </tr>
-                <tr>
-                    <td>Last name</td>
-                    <td>{lastName}</td>
-                </tr>
-                <tr>
-                    <td>Age</td>
-                    <td>{age}</td>
-                </tr>
-                <tr>
-                    <td>E-mail</td>
-                    <td>{email}</td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td>{password}</td>
-                </tr>
-                <tr>
-                    <td><Link to={`/user/update/${id}`}>Edit profile</Link></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>}
+        <div className={"user-container"}>
+            <div className={"user-data"}>
+                <div className={"div-id"}>{id}</div>
+                <div className={"div-name"}>{firstName} {lastName}</div>
+                <div className={"div-link-container"}>{<Link to={`/user/${id}`}><div className={"div-link"}>details</div></Link>}</div>
+            </div>
+            <div className={"user-delete"}>
+                <div className={"inner-user-delete"}><button onClick={removeUser}>delete</button></div>
+            </div>
         </div>
     )
 }
-withRouter(UserComponent);
+
+

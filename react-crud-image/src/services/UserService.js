@@ -7,14 +7,23 @@ export class UserService {
 
     async getUser(id) {
         return await fetch(`${this.SERVER}/user/${id}`).then(value => value.json());
-    }y
-
-    async updateUser(id, fN) {
-        await fetch(`${this.SERVER}/user/update/${id}`, {method: 'PUT', headers: {'Content-Type': 'application/json'}, body: {firstName : "Pasha"}});
     }
 
-    getAvatar(name) {
-        return `${this.SERVER}/avatars/${name}`;
+    async updateUser(id, form) {
+        const formData = new FormData(form);
+        return await fetch(`${this.SERVER}/user/update/${id}`, {method: 'PUT',
+            headers: {'Accept': 'application/json'},
+            body: formData});
     }
 
+    async saveUser(form) {
+        const formData = new FormData(form);
+        return await fetch(`${this.SERVER}/user/save`, {method: 'POST',
+            headers: {'Accept': 'application/json'},
+            body: formData });
+    }
+
+    async removeUser(id) {
+        return await fetch(`${this.SERVER}/user/delete/${id}`, {method: 'DELETE'});
+    }
 }

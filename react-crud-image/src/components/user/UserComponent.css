@@ -1,7 +1,93 @@
-.table {
-    border: 1px black solid;
+.profile {
+    height: 23.5px;
+    min-width: 300px;
+}
+
+.profile-title {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    background-color: mintcream;
+    border-bottom: 1px solid lightskyblue;
+    padding: 5px 5px 5px 6px;
+}
+
+.profile-container {
+    display: flex;
 }
 
 .avatar {
-    height: 150px;
+    height: 180px;
+    margin: 5px 0 0 10px;
+}
+
+.user-container {
+    background-color: mintcream;
+    border-bottom: 1px solid lightskyblue;
+    padding: 2px 2px 2px 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-data {
+    display: flex;
+}
+
+.div-value {
+    padding-right: 10px;
+}
+
+.div-id {
+    width: 30px;
+}
+
+.div-name {
+    min-width: 180px;
+}
+
+.div-parameter {
+    width: 110px;
+}
+
+.user-delete button {
+    background-color: #ff9e8d;
+    border: 0;
+    padding: 4px;
+    font-size: 10pt;
+    height: 100%;
+    cursor: pointer;
+}
+
+.user-save div {
+    width: 100%;
+}
+.user-save button {
+    background-color: #ffd08d;
+    border: 0;
+    padding: 4px;
+    font-size: 10pt;
+    height: 100%;
+    cursor: pointer;
+    width: 100%;
+}
+
+.user-save {
+    display: flex;
+    justify-content: center;
+}
+
+.user-delete button:hover {
+    background-color: blanchedalmond;
+}
+
+.user-save button:hover{
+    background-color: blanchedalmond;
+}
+
+.inner-user-delete {
+    height: 100%;
+}
+
+.custom-height {
+    height: 30px;
 }

@@ -18,18 +18,21 @@ public class UserController {
     private UserDAO userDAO;
 
     @PostMapping("/user/save")
-    public void saveUser(@RequestParam String firstName,
-                           @RequestParam String lastName,
-                           @RequestParam int age,
-                           @RequestParam String email,
-                           @RequestParam String password,
-                           @RequestParam MultipartFile avatar) {
-        userDAO.save(new User(firstName, lastName, age, email, password, avatar.getOriginalFilename()));
-        try {
-            avatar.transferTo(new File(System.getProperty("user.home") + File.separator + "avatars" + File.separator + avatar.getOriginalFilename()));
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void saveUser(@RequestParam MultipartFile avatar,
+                         @RequestParam String firstName,
+                         @RequestParam String lastName,
+                         @RequestParam int age,
+                         @RequestParam String email,
+                         @RequestParam String password) {
+        String avatarName = "";
+        if(avatar.getOriginalFilename().isEmpty()) {
+            avatarName = "simpsons.png";
+        } else {
+            avatarName = avatar.getOriginalFilename();
+            saveImage(avatar);
         }
+        User user = new User(firstName, lastName, age, email, password, avatarName);
+        userDAO.save(user);
     }
 
     @GetMapping("/user/{id}")
@@ -43,27 +46,25 @@ public class UserController {
     }
 
     @PutMapping("/user/update/{id}")
-    @ResponseBody
     public void updateUser(@PathVariable int id,
-                            @RequestParam Form firstName
-
-                            /*,
-                           @RequestParam String firstName*//*,
+                           @RequestParam MultipartFile avatar,
+                           @RequestParam String firstName,
                            @RequestParam String lastName,
                            @RequestParam int age,
                            @RequestParam String email,
-                           @RequestParam String password,
-                           @RequestParam MultipartFile avatar*/) {
-        System.out.println(id);
-        System.out.println(firstName.getFirstName());
+                           @RequestParam String password) {
         User user = userDAO.getOne(id);
-//        user.setFirstName(firstName);
-//        user.setLastName(lastName);
-//        user.setAge(age);
-//        user.setEmail(email);
-//        user.setPassword(password);
-//        user.setAvatar(avatar.getOriginalFilename());
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setAge(age);
+        user.setEmail(email);
+        user.setPassword(password);
+        if(!avatar.isEmpty()) {
+            user.setAvatar(avatar.getOriginalFilename());
+            saveImage(avatar);
+        }
         userDAO.save(user);
+
     }
 
     @DeleteMapping("/user/delete/{id}")
@@ -71,5 +72,12 @@ public class UserController {
         userDAO.delete(userDAO.getOne(id));
     }
 
+    public void saveImage(MultipartFile avatar) {
+        try {
+            avatar.transferTo(new File(System.getProperty("user.home") + File.separator + "avatars" + File.separator + avatar.getOriginalFilename()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

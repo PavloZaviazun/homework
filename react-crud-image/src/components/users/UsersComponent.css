@@ -1,5 +1,25 @@
-.div-user {
-    background-color: gainsboro;
-    border-bottom: 1px black dashed;
-    padding: 2px;
+.div-link {
+    background-color: #ffd08d;
+    padding: 4px;
+    font-size: 10pt;
+    color: black;
+    align-content: center;
+    align-items: center;
 }
+
+.div-link:hover {
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
+
+
+.div-link-container a {
+    text-decoration: none;
+}
+
+.div-link div {
+    display: flex;
+    justify-content: center;
+}
+

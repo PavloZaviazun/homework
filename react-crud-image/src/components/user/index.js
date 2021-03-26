@@ -1,2 +1,4 @@
 export * from "./UserComponent";
-export * from "./UserEditComponent";
+export * from "./usercreate/UserCreateComponent";
+export * from "./useredit/UserEditComponent";
+export * from "./userinfo/UserInfo"
