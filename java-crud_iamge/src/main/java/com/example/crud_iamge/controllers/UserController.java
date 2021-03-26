@@ -38,14 +38,14 @@ public class UserController {
                          @RequestParam String email,
                          @RequestParam String password) {
         String avatarName = "";
-
         if(avatar.getOriginalFilename().isEmpty()) {
             avatarName = "simpsons.png";
         } else {
             avatarName = avatar.getOriginalFilename();
             saveImage(avatar);
         }
-        User user = new User(firstName, lastName, age, email, password, avatarName);
+        String encode = passwordEncoder.encode(password);
+        User user = new User(firstName, lastName, age, email, encode, avatarName);
         userDAO.save(user);
     }
 

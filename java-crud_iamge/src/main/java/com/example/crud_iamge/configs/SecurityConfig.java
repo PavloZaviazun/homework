@@ -42,11 +42,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
-                .antMatchers(HttpMethod.POST, "/register").permitAll()
+                .antMatchers(HttpMethod.POST, "/user/save").permitAll()
                 .antMatchers("/").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/users/**").hasRole("ADMIN")
+                .antMatchers("/users").permitAll()
                 .antMatchers("user/create/**").hasRole("ADMIN")
-                .antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/user/**").permitAll()
                 .and().httpBasic().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 }

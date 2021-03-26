@@ -2,9 +2,10 @@ import {UserService} from "../../../services";
 
 export const RegisterComponent = () => {
 
+    const userService = new UserService();
+
     const sendData = (e) => {
         e.preventDefault();
-        const userService = new UserService();
         const form = document.forms.namedItem("registerForm");
         userService.saveUser(form);
     }
