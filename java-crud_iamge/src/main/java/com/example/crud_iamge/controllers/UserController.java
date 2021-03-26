@@ -4,6 +4,7 @@ import com.example.crud_iamge.dao.UserDAO;
 import com.example.crud_iamge.models.User;
 import lombok.AllArgsConstructor;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,6 +17,18 @@ import java.util.List;
 @CrossOrigin(origins = {"http://localhost:3000"})
 public class UserController {
     private UserDAO userDAO;
+    private PasswordEncoder passwordEncoder;
+
+    @PostMapping("/login")
+    public void signup(@RequestParam String email, @RequestParam String password) {
+        System.out.println(email);
+        System.out.println(password);
+//        System.out.println(user);
+//        String password = user.getPassword();
+//        String encode = passwordEncoder.encode(password);
+//        user.setPassword(encode);
+//        userDAO.save(user);
+    }
 
     @PostMapping("/user/save")
     public void saveUser(@RequestParam MultipartFile avatar,

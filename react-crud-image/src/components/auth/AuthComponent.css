@@ -1,0 +1,21 @@
+.register-button div {
+    width: 100%;
+}
+.register-button button {
+    background-color: #aede00;
+    border: 0;
+    padding: 4px;
+    font-size: 10pt;
+    height: 100%;
+    cursor: pointer;
+    width: 100%;
+}
+
+.register-button {
+    display: flex;
+    justify-content: center;
+}
+
+.register-button button:hover {
+    background-color: blanchedalmond;
+}

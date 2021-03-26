@@ -26,4 +26,11 @@ export class UserService {
     async removeUser(id) {
         return await fetch(`${this.SERVER}/user/delete/${id}`, {method: 'DELETE'});
     }
+
+    async loginUser(form) {
+        const formData = new FormData(form);
+        return await fetch(`${this.SERVER}/login`, {method: 'POST',
+            headers: {'Accept': 'application/json'},
+            body: formData });
+    }
 }
