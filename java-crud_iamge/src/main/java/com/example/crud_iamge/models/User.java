@@ -13,13 +13,14 @@ import javax.persistence.Id;
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
-public class User {
+public class User implements USerDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String firstName;
     private String lastName;
     private int age;
+    private Role role = Role.USER;
     private String email;
     private String password;
     private String avatar;
@@ -31,6 +32,11 @@ public class User {
         this.email = email;
         this.password = password;
         this.avatar = avatar;
+    }
+
+    private enum Role {
+        USER,
+        ADMIN
     }
 
 }
