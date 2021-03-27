@@ -14,7 +14,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:4200"})
 public class UserController {
     private UserDAO userDAO;
     private PasswordEncoder passwordEncoder;
