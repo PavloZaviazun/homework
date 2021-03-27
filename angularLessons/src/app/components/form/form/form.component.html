@@ -1,0 +1,35 @@
+<div>
+  <form [formGroup]="userForm">
+    <label>
+      First name:
+      <input [formControl]="firstName" name="firstName">
+    </label>
+    <br>
+    <label>
+      Last name:
+      <input [formControl]="lastName" name="lastName">
+    </label>
+    <br>
+    <label>
+      Age:
+      <input [formControl]="age" name="age">
+    </label>
+    <br>
+    <label>
+      E-mail:
+      <input [formControl]="email" name="email">
+    </label>
+    <br>
+    <label>
+      Password:
+      <input [formControl]="password" name="password">
+    </label>
+    <br>
+    <label>
+      Avatar:
+      <input [formControl]="avatar" name="avatar">
+    </label>
+    <br>
+    <button (click)="sendData()">Submit</button>
+  </form>
+</div>
