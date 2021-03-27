@@ -28,7 +28,6 @@ public class User implements UserDetails {
     private String password;
     private String avatar;
     private String role = "USER_ROLE";
-    private boolean isEnabled = true;
 
     public User(String firstName, String lastName, int age, String email, String password, String avatar) {
         this.firstName = firstName;
@@ -69,6 +68,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return isEnabled;
+        return true;
     }
 }
