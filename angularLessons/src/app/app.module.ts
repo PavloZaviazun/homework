@@ -6,6 +6,7 @@ import { UsersComponent } from './components/users/users/users.component';
 import { UserComponent } from './components/user/user/user.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormComponent } from './components/form/form/form.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormComponent } from './components/form/form/form.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
