@@ -25,9 +25,9 @@ public class TodoListController {
     }
 
     @PutMapping("/todolist/{id}/update")
-    public void updateTodoList(@PathVariable int id, @RequestBody TodoList todoList) {
+    public void updateTodoList(@PathVariable int id, @RequestBody String title) {
         TodoList one = todoListDAO.getOne(id);
-        one.setTitle(todoList.getTitle());
+        one.setTitle(title);
         one.setUpdatedAt(LocalDateTime.now());
 //        one.setTodos(todoList.getTodos());
         todoListDAO.save(one);

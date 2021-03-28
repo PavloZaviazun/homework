@@ -16,4 +16,10 @@ export class ListsService {
   saveTodoList(title: string): Observable<string> {
     return this.httpClient.post<string>(URL.list + '/save', title);
   }
+  updateTodoList(id: number, title: string): Observable<string> {
+    return this.httpClient.put<string>(`${URL.list}/${id}/update`, title);
+  }
+  deleteList(id: number): Observable<string> {
+    return this.httpClient.delete<string>(`${URL.list}/${id}/delete`);
+  }
 }
