@@ -20,8 +20,8 @@ public class TodoListController {
     }
 
     @PostMapping("/todolist/save")
-    public void saveTodolist(@RequestBody TodoList todoList) {
-        todoListDAO.save(todoList);
+    public void saveTodolist(@RequestBody String title) {
+        todoListDAO.save(new TodoList(title));
     }
 
     @PutMapping("/todolist/{id}/update")

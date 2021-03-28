@@ -25,8 +25,7 @@ public class TodoList {
     @JoinColumn(name = "todo_list_id")
     private List<Todo> todos = new ArrayList <>();
 
-    public TodoList(String title, List <Todo> todos) {
+    public TodoList(String title) {
         this.title = title;
-        this.todos = todos;
     }
 }
