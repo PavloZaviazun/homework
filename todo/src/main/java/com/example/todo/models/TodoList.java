@@ -1,5 +1,6 @@
 package com.example.todo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,14 +13,20 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString
+@ToString(exclude = "todos")
 public class TodoList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "todoList")
+    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime updatedAt = LocalDateTime.now();
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "todo_list_id")
     private List<Todo> todos = new ArrayList <>();
+
+    public TodoList(String title, List <Todo> todos) {
+        this.title = title;
+        this.todos = todos;
+    }
 }
