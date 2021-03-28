@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {UserService} from '../../../services/user.service';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -7,17 +9,16 @@ import {FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  @Input()
+  flag: boolean;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
   firstName = new FormControl('');
   lastName = new FormControl('');
   age = new FormControl('');
   email = new FormControl('');
   password = new FormControl('');
   avatar = new FormControl('');
-
-
-
   userForm = new FormGroup({
     firstName: this.firstName,
     lastName: this.lastName,
@@ -27,10 +28,19 @@ export class FormComponent implements OnInit {
     avatar: this.avatar
   });
   sendData = () => {
-    console.log('her');
+    const form = document.forms.namedItem('userForm');
+    this.userService.saveUser(form).subscribe(el => console.log(el));
   }
 
   ngOnInit(): void {
+    console.log('her');
   }
 
+  changeFlag1 = () => {
+    this.userService.changeFlag();
+    this.userService.returnFlag().subscribe(el => {
+      this.flag = el;
+      this.ngOnInit();
+    });
+  }
 }

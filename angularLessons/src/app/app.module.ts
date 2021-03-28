@@ -7,18 +7,22 @@ import { UserComponent } from './components/user/user/user.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormComponent } from './components/form/form/form.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ForRedirectComponent } from './components/for-redirect/for-redirect.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     UserComponent,
-    FormComponent
+    FormComponent,
+    ForRedirectComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

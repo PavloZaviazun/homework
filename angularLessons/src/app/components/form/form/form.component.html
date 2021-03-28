@@ -1,35 +1,38 @@
 <div>
-  <form [formGroup]="userForm">
+  <form name="userForm" [formGroup]="userForm" (ngSubmit)="sendData()">
     <label>
       First name:
-      <input [formControl]="firstName" name="firstName">
+      <input [formControl]="firstName" name="firstName" type="text">
     </label>
     <br>
     <label>
       Last name:
-      <input [formControl]="lastName" name="lastName">
+      <input [formControl]="lastName" name="lastName" type="text">
     </label>
     <br>
     <label>
       Age:
-      <input [formControl]="age" name="age">
+      <input [formControl]="age" name="age" type="text">
     </label>
     <br>
     <label>
       E-mail:
-      <input [formControl]="email" name="email">
+      <input [formControl]="email" name="email" type="text">
     </label>
     <br>
     <label>
       Password:
-      <input [formControl]="password" name="password">
+      <input [formControl]="password" name="password" type="text">
     </label>
     <br>
     <label>
       Avatar:
-      <input [formControl]="avatar" name="avatar">
+      <input [formControl]="avatar" name="avatar" type="file">
     </label>
     <br>
-    <button (click)="sendData()">Submit</button>
+    <button>Submit</button>
   </form>
+
+  <button (click)="changeFlag1()">ChangeFlag</button>
+  {{flag}}
 </div>

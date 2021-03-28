@@ -32,11 +32,16 @@ public class UserController {
 
     @PostMapping("/user/save")
     public void saveUser(@RequestParam MultipartFile avatar,
-                         @RequestParam String firstName,
+                         @RequestParam String firstName ,
                          @RequestParam String lastName,
                          @RequestParam int age,
                          @RequestParam String email,
                          @RequestParam String password) {
+        System.out.println(firstName);
+        System.out.println(lastName);
+        System.out.println(age);
+        System.out.println(email);
+        System.out.println(password);
         String avatarName = "";
         if(avatar.getOriginalFilename().isEmpty()) {
             avatarName = "simpsons.png";
