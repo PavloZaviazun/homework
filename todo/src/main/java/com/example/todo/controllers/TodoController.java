@@ -7,9 +7,15 @@ import com.example.todo.models.TodoList;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @AllArgsConstructor
@@ -25,44 +31,62 @@ public class TodoController {
     }
 
     @PostMapping("/todolist/{id}/todo/save")
-    public void saveTodolist(@PathVariable int id, @RequestBody Todo todo) {
+    public void saveTodolist(@PathVariable int id,
+                             @RequestParam String title,
+                             @RequestParam String body,
+                             @RequestParam String finalDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(finalDate, formatter);
         TodoList one = todoListDAO.getOne(id);
         List <Todo> todos = one.getTodos();
-        todos.add(todo);
+        todos.add(new Todo(title, body, localDate));
         one.setTodos(todos);
+        one.setUpdatedAt(LocalDateTime.now());
         todoListDAO.save(one);
     }
 
-    @PutMapping("/todolist/{id}/todo/{var}/update")
+    @PutMapping("/todolist/{id}/todo/{vari}/update")
     public void updateTodoList(@PathVariable int id,
-                               @PathVariable int var,
-                               @RequestBody Todo todo) {
+                               @PathVariable int vari,
+                               @RequestParam String title,
+                               @RequestParam String body,
+                               @RequestParam String finalDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(finalDate, formatter);
         TodoList one = todoListDAO.getOne(id);
         List <Todo> todos = one.getTodos();
-        System.out.println("a");
-        Todo el = todos.get(var);
-        el.setTitle(todo.getTitle());
-        el.setBody(todo.getBody());
-        el.setFinalDate(todo.getFinalDate());
+        Todo el = new Todo();
+        for(Todo todo : todos) {
+            if(todo.getId() == vari) el = todo;
+        }
+        el.setTitle(title);
+        el.setBody(body);
+        el.setFinalDate(localDate);
         one.setTodos(todos);
+        one.setUpdatedAt(LocalDateTime.now());
         todoListDAO.save(one);
     }
 
-    @DeleteMapping("/todolist/{id}/todo/{var}/delete")
+    @DeleteMapping("/todolist/{id}/todo/{vari}/delete")
     public void deleteTodoList(@PathVariable int id,
-                               @PathVariable int var) {
+                               @PathVariable int vari) {
         TodoList one = todoListDAO.getOne(id);
         List <Todo> todos = one.getTodos();
-        Todo todo = todos.get(var);
-//        Iterator<Todo> iterator = todos.iterator();
-//        while(iterator.hasNext()) {
-//            Todo next = iterator.next();
-//            if(next.getId() == var) iterator.remove();
-//        }
-        todos.remove(todo);
+        Todo el = new Todo();
+        for(Todo todo : todos) {
+            if(todo.getId() == vari) el = todo;
+        }
+        todos.remove(el);
         one.setTodos(todos);
+        one.setUpdatedAt(LocalDateTime.now());
         todoListDAO.save(one);
-        todoDAO.delete(todo);
+        todoDAO.delete(el);
     }
 
+    @PostMapping("/todolist/{id}/todos")
+    public List <Todo> getTodoLists(@PathVariable int id,
+                                        @RequestBody String search) {
+        TodoList one = todoListDAO.getOne(id);
+        return one.getTodos().stream().filter(el -> el.getTitle().toLowerCase().contains(search.toLowerCase())).collect(Collectors.toList());
+    }
 }

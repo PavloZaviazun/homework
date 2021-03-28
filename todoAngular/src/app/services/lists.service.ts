@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {URL} from '../config';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {ITodoList} from '../interfaces';
 
 @Injectable({
@@ -9,17 +9,29 @@ import {ITodoList} from '../interfaces';
 })
 export class ListsService {
 
+  public entities: BehaviorSubject<ITodoList[]> = new BehaviorSubject<ITodoList[]>([]);
+  private todoList: ITodoList[] = [];
+
   constructor(private httpClient: HttpClient) { }
-  getTodoLists(): Observable<ITodoList[]> {
-    return this.httpClient.get<ITodoList[]>(URL.lists);
+  getTodoLists(): void {
+    this.httpClient.get<ITodoList[]>(URL.lists).subscribe(todoList => {
+      this.todoList = todoList;
+      this.entities.next(this.todoList);
+    });
   }
-  saveTodoList(title: string): Observable<string> {
-    return this.httpClient.post<string>(URL.list + '/save', title);
+  saveTodoList(title: string): void {
+    this.httpClient.post<string>(URL.list + '/save', title).subscribe(() => this.getTodoLists());
   }
-  updateTodoList(id: number, title: string): Observable<string> {
-    return this.httpClient.put<string>(`${URL.list}/${id}/update`, title);
+  updateTodoList(id: number, title: string): void {
+    this.httpClient.put<string>(`${URL.list}/${id}/update`, title).subscribe(() => this.getTodoLists());
   }
-  deleteList(id: number): Observable<string> {
-    return this.httpClient.delete<string>(`${URL.list}/${id}/delete`);
+  deleteList(id: number): void {
+    this.httpClient.delete<string>(`${URL.list}/${id}/delete`).subscribe(() => this.getTodoLists());
+  }
+  searchTodoLists(search: string): void {
+    this.httpClient.post<ITodoList[]>(`${URL.lists}/search`, search).subscribe(todoList => {
+      this.todoList = todoList;
+      this.entities.next(this.todoList);
+    });
   }
 }

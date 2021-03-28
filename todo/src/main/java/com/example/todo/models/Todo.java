@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor
@@ -18,12 +18,12 @@ public class Todo {
     private int id;
     private String title;
     private String body;
-    private LocalDateTime finalDate;
+    private LocalDate finalDate;
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     private TodoList todoList;
 
-    public Todo(String title, String body, LocalDateTime finalDate) {
+    public Todo(String title, String body, LocalDate finalDate) {
         this.title = title;
         this.body = body;
         this.finalDate = finalDate;
