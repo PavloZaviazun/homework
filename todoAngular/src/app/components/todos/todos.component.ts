@@ -13,6 +13,9 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class TodosComponent implements OnInit {
   todos: Observable<ITodo[]>;
   id: string;
+  filterIdFlag = false;
+  filterDateFlag = false;
+
   constructor(private router: Router,
               private todosService: TodosService) {
     this.id = this.router.url.split('list/')[1];
@@ -32,6 +35,24 @@ export class TodosComponent implements OnInit {
       this.todosService.getTodos(this.id);
     } else {
       this.todosService.searchTodos(this.id, this.formSearch.getRawValue().search);
+    }
+  }
+
+  sortByID(): void {
+    this.filterIdFlag = !this.filterIdFlag;
+    if (this.filterIdFlag) {
+      this.todosService.ascIdFilter();
+    } else {
+      this.todosService.dscIdFilter();
+    }
+  }
+
+  sortByDate(): void {
+    this.filterDateFlag = !this.filterDateFlag;
+    if (this.filterDateFlag) {
+      this.todosService.ascDateFilter();
+    } else {
+      this.todosService.dscDateFilter();
     }
   }
 }

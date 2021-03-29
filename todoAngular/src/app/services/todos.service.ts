@@ -35,4 +35,19 @@ export class TodosService {
       this.entities.next(this.todos);
     });
   }
+
+  ascIdFilter(): void {
+    this.todos.sort((a, b) => b.id - a.id);
+  }
+
+  dscIdFilter(): void {
+    this.todos.sort((a, b) => a.id - b.id);
+  }
+
+  ascDateFilter(): void {
+    this.todos.sort((a, b) => Date.parse(b.finalDate) - Date.parse(a.finalDate));
+  }
+  dscDateFilter(): void {
+    this.todos.sort((a, b) => Date.parse(a.finalDate) - Date.parse(b.finalDate));
+  }
 }
