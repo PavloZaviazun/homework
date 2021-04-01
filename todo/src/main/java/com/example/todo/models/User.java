@@ -31,6 +31,11 @@ public class User implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     private Set <AuthToken> authTokens = new HashSet<>();
 
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     @Override
     public Collection <? extends GrantedAuthority> getAuthorities() {
         return roles.stream()

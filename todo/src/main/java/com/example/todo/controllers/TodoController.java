@@ -7,13 +7,9 @@ import com.example.todo.models.TodoList;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 

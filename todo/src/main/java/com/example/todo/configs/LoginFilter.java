@@ -48,7 +48,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         AuthToken authToken = new AuthToken();
         authToken.setToken(token);
         authToken.setUser(user);
-//        user.getAuthTokens().add(authToken);
+        user.getAuthTokens().add(authToken);
         userDAO.save(user);
         response.addHeader("Authorization", "Bearer " + token);
         chain.doFilter(request, response);

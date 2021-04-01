@@ -11,6 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class AllRequestsFilter extends GenericFilter {
@@ -23,8 +24,9 @@ public class AllRequestsFilter extends GenericFilter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         Authentication authentication = null;
-        HttpServletRequest servletRequest = (HttpServletRequest) request;
-        String authorizationToken = servletRequest.getHeader("Authorization");
+//        HttpServletRequest servletRequest = (HttpServletRequest) request;
+        HttpServletResponse servletResponse = (HttpServletResponse) response;
+        String authorizationToken = servletResponse.getHeader("Authorization");
         System.out.println(authorizationToken);
         if(authorizationToken != null && authorizationToken.startsWith("Bearer ")) {
             String token = authorizationToken.replaceAll("Bearer ", "");
@@ -40,7 +42,6 @@ public class AllRequestsFilter extends GenericFilter {
             }
         }
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
         filterChain.doFilter(request, response);
     }
 }

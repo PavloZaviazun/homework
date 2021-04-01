@@ -16,10 +16,12 @@ public class UserController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/auth")
-    public void login(@RequestBody User user) {
+    public void login(@RequestParam String username, @RequestParam String password) {
         System.out.println("MAPPPTINg");
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        System.out.println(user);
+//        System.out.println(username);
+//        System.out.println(password);
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
+//        System.out.println(user);
 //        System.out.println(username);
 //        System.out.println(password);
 
