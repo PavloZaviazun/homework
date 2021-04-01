@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private httpClient: HttpClient) { }
 
   loginAttempt(user): void {
-    this.httpClient.post<string>(URL.auth, JSON.stringify(user)).subscribe(el => el);
+    this.httpClient.post<any>(URL.auth, JSON.stringify(user)).subscribe(el => el);
   }
 }
 // , {
